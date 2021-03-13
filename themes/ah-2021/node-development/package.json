@@ -69,7 +69,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run watch:sass & npm run watch:css & npm run watch:media & npm run watch:svg & npm run watch:js & npm run watch:css",
+    "start": "npm run sass & npm run watch:css & npm run watch:media & npm run watch:svg & npm run watch:js & npm run watch:css",
     "build": "npm run sass:build & npm run copy:css & run babeljs & npm run uglifyjs & npm run concatjs & npm run postcss & npm run criticalcss ",
     "stop": "stop http-server",
     "sass": "node-sass --sourceMap=true -w ./dev/sass/ -o ./dev/css/",
@@ -117,7 +117,7 @@
     "cssnano": "^4.1.10",
     "eslint": "^6.6.0",
     "live-server": "^1.2.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^5.0.0",
     "npm-watch": "^0.6.0",
     "postcss": "^7.0.23",
     "postcss-cli": "^6.1.3",
