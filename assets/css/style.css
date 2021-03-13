@@ -1,7 +1,7 @@
 :root {
   --body-margin:		0;
   --body-padding:		0;
-  --content-max-width: 1600px;
+  --content-max-width: 88%;
   --text-max-width: 	 42rem;
   --base-cols: 4;
   --min-col-width: 240px;
@@ -11,6 +11,7 @@
   --vertical-unit: 1.5rem;
   --gutter: 1.5rem;
   --heading-line-height: 1.3;
+  --feature-padding: 1.5rem * 3;
   --x-small: 340px;
   --small: 540px;
   --tablet: 768px;
@@ -46,7 +47,7 @@
   --shade-20: #202020;
   --shade-10: #101010;
   /* Brand colours * */
-  --brand-primary: #000000;
+  --brand-primary: #f50000;
   --brand-darker: black;
   --brand-secondary: #404040;
   --brand-primary-invert: 	 #303030;
@@ -58,7 +59,7 @@
   --heading-font: Quattrocento Sans, sans-serif;
   --text-colour: #303030;
   --heading-colour: #303030;
-  --link-color: #000000;
+  --link-color: #f50000;
   --link-active-color: black;
   --link-active-weight: 700;
   --text-line-height: 1.5;
@@ -98,12 +99,6 @@
   --buttonTransition: 480ms;
   --easing: ease-in-out;
   --bounce: cubic-bezier(0.93, 0.1, 0.195, 1); }
-
-:root {
-  --content-max-width: 88%;
-  --line-height:			1.45;
-  --feature-padding: 1.5rem * 3;
-  --bold-font-weight: 700; }
 
 /** Utilities **/
 /* Media */
@@ -963,6 +958,10 @@ table {
     color: var(--text-black); } }
 
 /* Hero components overlay */
+.bc-hero .bc-media-overlay, .bc-hero--full-screen .bc-media-overlay {
+  background-color: rgba(245, 0, 0, 0.64);
+  mix-blend-mode: color-burn; }
+
 .bc-card .bc-card__media, .bc-card--roll-over .bc-card__media, .bc-card--plain-text .bc-card__media {
   background-color: var(--shade-60); }
 
