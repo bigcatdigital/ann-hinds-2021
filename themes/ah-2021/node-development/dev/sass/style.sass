@@ -12,30 +12,56 @@ body
 	font-family: var(--base-font) 
 	font-size: 100% 
 	line-height: 1.45  
-	background-color: var(--shade-f0)
-
+	background-color: var(--shade-f0) 
+	
 h1, h2, h3, h4, h5 
 	margin-top: 0
 	margin-bottom: var(--vertical-unit)
 	font-family: var(--heading-font) 
-	line-height: 1.35
+	font-weight: var(--heading-font-weight)  
+	line-height: var(--heading-line-height)
 h1
-	font-size: 2.0581rem
+	font-size: var(--large-text)
 h2
-	font-size: 1.618rem 
+	font-size: var(--med-small-text) 
 h3
-	font-size: 1.272rem
+	font-size: var(--regular-text) 
+h4
+	font-size: var(--regular-text) 
+.bc-small
+	font-size: var(--small-text) 
 p, ul, ol, blockquote 
 	margin-top: 0
 	margin-bottom: var(--vertical-unit)
+	font-weight: var(--font-weight) 
 button
 	font-family: var(--base-font)
 a 
+	position: relative
 	color: var(--link-color)
-	transition: color var(--quicktrans) var(--easing)
+	text-decoration: none
+	transition: color var(--quicktrans) var(--easing), font-weight 220ms var(--easing)
+	&::before
+		content: "" 
+		position: absolute
+		bottom: 0.236rem
+		left: 0%
+		width: 100%
+		height: 0
+		opacity: 0
+		background-color: var(--brand-secondary)
+		transition: height var(--quicktrans) var(--easing), opacity var(--quicktrans) var(--easing)
 	@include linkHover
+		text-decoration: none
 		font-weight: var(--link-active-weight)
-		color: var(--link-active-color)
+		
+		&::before
+			height: 4px
+			opacity: 0.6
+	&.bc-no-underline
+		&::before
+			display: none
+			
 blockquote
 	margin-left: 0
 	margin-top: calc(var(--vertical-unit) * 2)
@@ -72,19 +98,44 @@ iframe
 @import 'components/tables';
 
 
-/* Inner page header */
-.bc-site-header
-	& &__main-navigation
-		&__item
-			> a
-				@media screen and (max-width: calc(#{$tablet-large} - 1px))	
-					color: var(--text-black)
+.bc-feature-link
+	&::before
+		content: " "
+		position: absolute
+		bottom: 0
+		width: 0
+		height: 2px
+		background-color: var(--brand-secondary)
 
+.bc-container
+	padding-top: 		calc(var(--vertical-unit) * 2)
+	padding-bottom: calc(var(--vertical-unit) * 2)
 /* Hero components overlay */
 .bc-hero
+	&--full-screen
+		width: calc(100% - (var(--gutter)))
+		margin-top: calc(var(--vertical-unit) / 2) 
+		margin-left: calc(var(--gutter) / 2) 
+		padding-top: 0
+		padding-bottom: 0
 	.bc-media-overlay
 		background-color: rgba($brand-primary, 0.64)
 		mix-blend-mode: color-burn
+	& &__footer
+		justify-content: center
+		&__scroll
+			&::before 
+				display: none
+			@include linkHover
+				background-color: transparent
+	& &__heading
+		margin-bottom: 0
+	& &__tagline
+		font-size: var(--med-text)
+.bc-site-header
+	&.bc-is-hero-overlay
+		top: calc(var(--vertical-unit) / 2)
+		padding-right: var(--gutter)
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -94,10 +145,63 @@ iframe
 			background-color: var(--shade-d0)
 			text-decoration: none
 			a 
-				text-decoration: underline
 				font-weight: var(--link-active-weight)
-			
-			
+				&::before
+					height: 4px
+					opacity: 0.6
+
+.bc-featured-list
+	padding-left: #{(20/14)}rem
+	margin-bottom: 0
+	.bc-card
+		overflow: visible
+		&:nth-of-type(3n-1)
+			h2
+				&:before 
+					background-color: var(--brand-secondary)
+		&:nth-of-type(3n)
+			h2
+				&:before 
+					background-color: var(--black)
+	h2
+		position: relative
+		font-size: var(--regular-text)
+		font-weight: 		var(--bold-font-weight)
+		margin-bottom: 	calc(var(--vertical-unit) / 2)
+		overflow: visible
+		&:before
+			position: absolute
+			content: " "
+			width: 	0.486rem
+			height: 0.486rem
+			border-radius: 50%
+			top: 50%
+			left: -#{((20/14) - (0.486/2))}rem
+			transform: translateY(-50%)
+			background-color: var(--brand-primary)
+	p
+		&:last-child
+			margin-bottom: 0
+	@media screen and (min-width: #{$tablet})
+		display: grid
+		grid-template-rows: auto 
+		gap: var(--gutter)
+		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
+		
+
+/* Inner page header */
+.bc-site-header
+	z-index: 20
+	& &__main-navigation
+		&__item
+			> a 
+				&::before
+					left: var(--gutter)
+					bottom: calc(var(--vertical-unit) / 2 + 0.236rem)
+					width: calc(100% - var(--gutter) - var(--gutter))
+				@media screen and (max-width: calc(#{$tablet-large} - 1px))	
+					color: var(--text-black)
+
 
 
 

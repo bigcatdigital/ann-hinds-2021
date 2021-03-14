@@ -2,6 +2,9 @@
 	position: relative
 	@include makeFlexbox($justify: space-between, $wrap: wrap)
 	color: var(--text-black) 
+	@at-root &.bc-container
+		padding-top: 		var(--vertical-unit)
+		padding-bottom: var(--vertical-unit) 
 	& &__menu-link, & &__home-link
 		z-index: 20
 	& &__menu-link
@@ -64,6 +67,7 @@
 			padding-top: calc(var(--vertical-unit) / 2)	
 	&.bc-is-hero-overlay
 		position: absolute
+		
 		top: 0
 		left: 0
 		width: 100%

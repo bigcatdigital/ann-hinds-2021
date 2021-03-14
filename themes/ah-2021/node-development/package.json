@@ -69,10 +69,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run sass & npm run watch:css & npm run watch:media & npm run watch:svg & npm run watch:js & npm run watch:css",
+    "start": "npm run watch:sass & npm run watch:css & npm run watch:media & npm run watch:svg & npm run watch:js & npm run watch:css",
     "build": "npm run sass:build & npm run copy:css & run babeljs & npm run uglifyjs & npm run concatjs & npm run postcss & npm run criticalcss ",
     "stop": "stop http-server",
-    "sass": "node-sass --sourceMap=true -w ./dev/sass/ -o ./dev/css/",
+    "sass": "node-sass --sourceMap=true ./dev/sass/ -o ./dev/css/",
     "sass:build": "node-sass ./dev/sass/ -o ./dev/css/",
     "watch:sass": "npm-watch sass",
     "watch:html": "npm-watch copy:html",

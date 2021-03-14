@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
-	<link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Raleway&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" href="./assets/css/vendor/flickity.min.css" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
@@ -46,61 +46,66 @@
 			<div class="bc-hero__body__content">
 				<h1 class="bc-hero__heading">Welcome hero</h1>
 				<p class="bc-hero__tagline">Hero tagline</p>
-				<a class="bc-hero__link bc-arrow-link" href="single-page.html">
-					Link to follow
+				<p class="bc-arrow-link">
+					<a href="single-page.html">
+						Link to follow
+						
+					</a>
 					<svg class="svg-icon">
 						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 					</svg>
-				</a>
+				</p>
+				
 			</div>
 		</article>
 		<footer class="bc-hero__footer">
-			<p>Footer left</p>
-			<a href="#body-content" class="bc-hero__footer__scroll bc-scroll-link">
+			<a href="#body-content" class="bc-hero__footer__scroll bc-scroll-link bc-small">
 				Scroll
 				<svg class="svg-icon">
 					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
 				</svg>
 			</a>
-			<p>Footer right</p>
 		</footer>
 		<div class="bc-media-overlay"></div>
 	</section>
 	<!-- // Hero -->
-	<!-- Plain cards --> 
+	<!-- Services --> 
 	<section class="bc-container" id="body-content" aria-label="Auto-grid; standard cards">
-		<h1 class=""><code>Auto-grid; standard cards</code></h1>
-		<div class="bc-grid--auto"> 
-			<article class="bc-card" aria-label="Standard card #1">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading</h2>	
-				<p>Hello paragraph</p>
-				<a href="single-page.html">Link right here</a>
-			</article>
-			<article class="bc-card" aria-label="Standard card #2">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading</h2>	
-				<p>Hello paragraph</p>
-				<a href="single-page.html">Link right here</a>
-			</article>
-			<article class="bc-card" aria-label="Standard card #3">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading</h2>	
-				<p>Hello paragraph</p>
-				<a href="single-page.html">Link right here</a>
-			</article>
-			<article class="bc-card" aria-label="Standard card #4">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading</h2>	
-				<p>Hello paragraph</p>
-				<a href="single-page.html">Link right here</a>
-			</article>
-			<article class="bc-card" aria-label="Standard card #5">
-					<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading</h2>	
-				<p>Hello paragraph</p>
-				<a href="single-page.html">Link right here</a>
-			</article>
+		<h1 class="">Services</h1>
+		<div class="bc-featured-list bc-grid"> 
+				<div class="bc-card">
+					<h2>Leadership coaching</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>	
+				</div>	
+				<div class="bc-card">
+					<h2>Executive coaching</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>
+				</div>
+				
+				<div class="bc-card">
+					<h2>Organizational consulting</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>	
+				</div>
+				<div class="bc-card">
+					<h2>Organizational consulting</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>	
+				</div>
+				<div class="bc-card">
+					<h2>Professional supervision</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>	
+				</div>
+				<div class="bc-card">
+					<h2>Career coaching</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>	
+				</div>
+				<div class="bc-card">
+					<h2>Public speaking</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>	
+				</div>
+				<div class="bc-card">
+					<h2>Interim assignments</h2>
+					<p>Aenean massa. Cum sociis natoque penatibus et magnis dis.</p>	
+				</div>
 		</div>
 	</section><!-- //Plain cards -->
 	<!-- Text only cards --> 
