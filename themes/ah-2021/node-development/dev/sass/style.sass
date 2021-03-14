@@ -1,6 +1,6 @@
 @import 'globals/_globals' 
 @import 'components/_mixins'
-@import 'components/utilities.sass';
+
 
 *
 	box-sizing: border-box 
@@ -12,7 +12,8 @@ body
 	font-family: var(--base-font) 
 	font-size: 100% 
 	line-height: 1.45  
-	background-color: var(--shade-f0) 
+	background-color: var(--shade-f0)
+	overflow: hidden
 	
 h1, h2, h3, h4, h5 
 	margin-top: 0
@@ -54,7 +55,6 @@ a
 	@include linkHover
 		text-decoration: none
 		font-weight: var(--link-active-weight)
-		
 		&::before
 			height: 4px
 			opacity: 0.6
@@ -86,30 +86,41 @@ iframe
 	html
 		font-size: 20px
 
-
-
-@import 'components/header.sass';	
+/* CSS utilities & animations */
+@import 'components/utilities.sass';
 @import 'components/animations.sass';
+
+/* Grid */	
 @import 'components/grid';
-@import 'components/hero'; 
-@import 'components/cards'; 
-@import 'components/bc-two-column-layout'; 
-@import 'components/flickity-sliders'; 
-@import 'components/tables';
-
-
-.bc-feature-link
-	&::before
-		content: " "
-		position: absolute
-		bottom: 0
-		width: 0
-		height: 2px
-		background-color: var(--brand-secondary)
-
+/* Grid container project overrides */
 .bc-container
 	padding-top: 		calc(var(--vertical-unit) * 2)
 	padding-bottom: calc(var(--vertical-unit) * 2)
+
+/* Site header */
+@import 'components/header.sass';	
+/* Site header overrides */
+.bc-site-header
+	&.bc-is-hero-overlay
+		top: calc(var(--vertical-unit) / 2)
+		padding-right: var(--gutter)	
+
+	
+/* Header navigation items */
+.bc-site-header
+	& &__main-navigation
+		&__item
+			> a 
+				display: inline-flex
+				&::before
+					left: var(--gutter)
+					bottom: calc(var(--vertical-unit) / 2 + 0.236rem)
+					width: calc(100% - var(--gutter) - var(--gutter))
+				@media screen and (max-width: calc(#{$tablet-large} - 1px))	
+					color: var(--text-black)
+
+/* Heroes */
+@import 'components/hero'; 	
 /* Hero components overlay */
 .bc-hero
 	&--full-screen
@@ -132,10 +143,9 @@ iframe
 		margin-bottom: 0
 	& &__tagline
 		font-size: var(--med-text)
-.bc-site-header
-	&.bc-is-hero-overlay
-		top: calc(var(--vertical-unit) / 2)
-		padding-right: var(--gutter)
+
+/* Card components */
+@import 'components/cards'; 
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -144,12 +154,16 @@ iframe
 		@include linkHover
 			background-color: var(--shade-d0)
 			text-decoration: none
-			a 
-				font-weight: var(--link-active-weight)
-				&::before
-					height: 4px
-					opacity: 0.6
+	
+/* Two-column feature layout
+@import 'components/bc-two-column-layout'; 
+/* Sliders - Flickity slider plugin */
+@import 'components/flickity-sliders'; 
+/* Tables */
+@import 'components/tables';
 
+//** Project Custom components **/
+/* Custom: services list, uses cards for list items - see Homepage Services */
 .bc-featured-list
 	padding-left: #{(20/14)}rem
 	margin-bottom: 0
@@ -189,18 +203,11 @@ iframe
 		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
 		
 
-/* Inner page header */
-.bc-site-header
-	z-index: 20
-	& &__main-navigation
-		&__item
-			> a 
-				&::before
-					left: var(--gutter)
-					bottom: calc(var(--vertical-unit) / 2 + 0.236rem)
-					width: calc(100% - var(--gutter) - var(--gutter))
-				@media screen and (max-width: calc(#{$tablet-large} - 1px))	
-					color: var(--text-black)
+		
+.ah-homepage
+	.bc-site-header
+		z-index: 20
+	
 
 
 
