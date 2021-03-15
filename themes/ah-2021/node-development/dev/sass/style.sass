@@ -13,7 +13,7 @@ body
 	font-size: 100% 
 	line-height: 1.45  
 	background-color: var(--shade-f0)
-	overflow: hidden
+	overflow-x: hidden 
 	
 h1, h2, h3, h4, h5 
 	margin-top: 0
@@ -70,6 +70,8 @@ blockquote
 	border-left: 4px solid var(--shade-90)
 	p 
 		font-style: italic
+img
+	max-width: 100%
 iframe
 	border: none
 .svg-icon
@@ -88,6 +90,11 @@ iframe
 
 /* CSS utilities & animations */
 @import 'components/utilities.sass';
+/* Uitilities project overrides */
+.bc-arrow-link
+	.svg-icon
+		fill: $brand-primary
+/* Animations */
 @import 'components/animations.sass';
 
 /* Grid */	
@@ -105,7 +112,6 @@ iframe
 		top: calc(var(--vertical-unit) / 2)
 		padding-right: var(--gutter)	
 
-	
 /* Header navigation items */
 .bc-site-header
 	& &__main-navigation
@@ -202,16 +208,74 @@ iframe
 		gap: var(--gutter)
 		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
 		
-
-		
-.ah-homepage
-	.bc-site-header
-		z-index: 20
+.ah-corporate-individual 
+	position: relative
+	padding: 0
 	
-
-
-
-
-
-		
-		
+	overflow: hidden
+	> .bc-media-overlay
+		opacity: 0
+		z-index: 10
+	> img 
+		display: none
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+		object-position: center
+		z-index: 0
+	& &__sects
+		position: relative 
+		@include makeFlexbox(column, $align: stretch)
+		background-color: var(--shade-e0)
+		z-index: 20
+	.bc-card
+		position: relative
+		flex: 1 1 50%
+		@include makeFlexbox(column, center)
+		margin-bottom: 0
+		padding: calc(var(--gutter) * 1.333) var(--gutter)
+		color: var(--black)
+		background-color: transparent
+		transition: background-color var(--quicktrans) var(--easing)
+		&__body 
+			position: relative
+			z-index: 10
+		p:last-of-type
+			margin-bottom: 0
+		a 
+			margin-bottom: 0
+		> .bc-media-overlay
+			background-color: $black
+			opacity: 0
+			z-index: 0
+			transition: opacity var(--quicktrans) var(--easing)
+		@include linkHover
+			text-decoration: none
+			background-color: rgba($black, 0.1)
+			> .bc-media-overlay
+				opacity: 0.6
+	@media screen and (min-width: #{$tablet})
+		padding-top: ((9/16)*100%)
+		background-color: rgba($black, 0.24)
+		> .bc-media-overlay
+			opacity: 0
+			z-index: 10
+		& &__corp-image
+			display: block
+		& &__sects
+			position: absolute
+			left: 0
+			bottom: 0
+			flex-direction: row
+			width: 100%
+			background-color: rgba($black, 0.24)
+		.bc-card
+			color: var(--white)
+			a 
+				color: var(--white)
+			.svg-icon
+				fill: var(--white)
+			

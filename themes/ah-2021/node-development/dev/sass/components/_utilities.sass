@@ -67,7 +67,10 @@
 		a
 			color: $colour-invert 	
 		.svg-icon
-			fill: $colour-invert  	
+			fill: $colour-invert 
+		.bc-arrow-link
+			.svg-icon
+				fill: $colour-invert 
 	
 /* Shading */
 @each $name, $shade in $shades	
@@ -82,5 +85,8 @@
 			@include linkHover
 				color: $shade-invert
 		.svg-icon
-			fill: $shade-invert  	
+			fill: $shade-invert 
+		.bc-arrow-link
+			.svg-icon
+				fill: $shade-invert
 	
