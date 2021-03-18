@@ -9714,22 +9714,11 @@ return Flickity;
 				
 				console.log(`window.outerWidth is ${window.outerWidth}`);
 			}
-		}	
-		
-		/* 
-			start
-			-- nav hidden --
-			onclick navLink
-			-- nav visible --
-			onclick navLink
-			-- nav visible --
-		*/
+		}
 		$siteHeaderMenuLink.addEventListener('click', (evt) => {
 			evt.preventDefault();
-			console.log(`Header class list: ${$siteHeader.classList}`);
 			$siteHeader.classList.toggle('bc-is-active'); 
 		});
-		
 		
 	}//mainNavigationSetup()
 	mainNavigationSetup();
@@ -9781,6 +9770,141 @@ return Flickity;
 		
 	}//end if $bcFlkSliders
 	
+	/* Custom -- services - corporate/individual - homepage */
+	if (debug) {
+		console.log('');
+		console.log('Services component');
+		console.log('------------------');
+	}
+	const $ahServices = Array.from(document.querySelectorAll('.ah-corporate-individual'));
+	if ($ahServices.length > 0) {
+		$ahServices.forEach(($ahService) => {
+			/* Set up the images - array and current active image ID */
+			const serviceImages = Array.from($ahService.querySelectorAll('.ah-corporate-individual__image'));
+			if (debug) {
+				console.log(`Services images array length: ${serviceImages.length}`); 
+			}
+			if (serviceImages <= 0) {
+				return;
+			}
+			
+			function _getNewServiceImage(serviceId) {
+				if (debug) {
+					console.log(`Get new service image function. Service image id: ${serviceId}`); 
+				}
+				return serviceImages.find(($serviceImage) => {
+					return $serviceImage.getAttribute('id') === serviceId && $serviceImage.classList.contains('is-active') === false;	
+				});	
+			}
+			/* The service triggers - on hover */
+			if (debug) {
+				console.log(`Set up image change triggers`); 
+			}
+			const serviceTriggers = Array.from($ahService.querySelectorAll('.ah-corporate-individual__trigger'));
+			if (debug) {
+				console.log(`Service triggers length: ${serviceTriggers.length}`); 
+			}
+			if (serviceTriggers.length > 0) {
+				let $activeServiceTrigger = null;
+				let $activeServiceImage = null;
+				let $servicesNextSibling = null;
+				let $servicesPrevSibling = null;
+				
+				serviceTriggers.forEach(($serviceTrigger, idx) => {
+					if (idx < 1) {
+						$servicesNextSibling = $serviceTrigger.closest('.bc-container').nextElementSibling;
+						$servicesPrevSibling = $serviceTrigger.closest('.bc-container').previousElementSibling;	
+						if (debug) {
+							console.log('Next, prev siblings:');
+							console.log($servicesNextSibling);
+							console.log($servicesPrevSibling);	
+						}
+					}
+					$serviceTrigger.addEventListener('mouseover', (evt) => { 
+						evt.stopPropagation();
+						if (debug) {
+							console.log('-- Trigger mouseover handler');
+						}
+						const $thisTrigger = evt.currentTarget;
+						const serviceID = $thisTrigger.dataset.service;
+						if (debug) {
+							console.log('This trigger: '+$thisTrigger);
+						}
+						if ($thisTrigger.classList.contains('is-active')) {
+							if (debug) {
+								console.log('Trigger is active, return script.');
+							}
+							return;
+						}
+						$activeServiceImage = serviceImages.find(($serviceImage) => {
+							return $serviceImage.classList.contains('is-active') && $serviceImage.getAttribute('id') !== serviceID;	
+						});	
+						if (debug) {
+							console.log(`Find currently active service image in serviceImages array:`);
+							console.log($activeServiceImage);
+						}
+						if ($activeServiceImage === undefined) {
+							return;
+						}
+						$activeServiceImage.classList.remove('is-active');	
+						if ($activeServiceTrigger) {
+							if (debug) {
+								console.log(`If there's an active service trigger remove the active class.`);
+							}
+							$activeServiceTrigger.classList.remove('is-active');
+							if (debug) {
+								console.log(`Active trigger classList: ${$activeServiceTrigger.classList}`);
+							}
+						}
+						const $newServiceImage = _getNewServiceImage(serviceID);
+						if (debug) {
+							console.log(`Get the new active image:`);
+							console.log($newServiceImage);
+						}
+						
+						$newServiceImage.classList.add('is-active');
+						if (debug) {
+							console.log(`Add active class to new active image: ${$newServiceImage.classList}`);
+						}
+						$thisTrigger.classList.add('is-active');
+						if (debug) {
+							console.log(`Add active class to new active trigger. Class list: ${$thisTrigger.classList}`);
+						}
+						$activeServiceImage = $newServiceImage;
+						$activeServiceTrigger = $thisTrigger;
+						if (debug) {
+							console.log(`Set new active trigger as the current active trigger: ${$activeServiceTrigger}`);
+							console.log($activeServiceTrigger);
+							console.log(`Set new active image as the current active image:`);
+							console.log($activeServiceImage);
+						}
+					});// This $serviceTrigger mouseover
+					function _clearActiveFilter() {
+						if ($activeServiceTrigger) {
+							if (debug) {
+								console.log(`Clear active trigger:`);
+								console.log(`${$activeServiceTrigger}`);
+							}
+							$activeServiceTrigger.classList.remove('is-active');
+						}
+					}
+					$servicesNextSibling.addEventListener('mouseover', (evt) => {
+						evt.stopPropagation();
+						_clearActiveFilter();
+					});
+					$servicesPrevSibling.addEventListener('mouseover', (evt) => {
+						evt.stopPropagation();
+						_clearActiveFilter();
+					});
+					//$servicesPrevSibling
+					
+				});// serviceTriggers for each
+			}// end if serviceTriggers
+		});// end $ahServices for each
+	}//end if $ahServices is > 0
+	
+	
+	/* On resize functions */
 	window.addEventListener('resize', () => {
 		mainNavigationSetup();
 	});

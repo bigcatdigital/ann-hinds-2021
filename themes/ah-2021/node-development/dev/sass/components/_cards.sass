@@ -11,8 +11,8 @@
 	& &__media
 		width: 100%
 		margin-bottom: var(--vertical-unit)
-	&--roll-over
-		@extend .bc-card
+	&.bc-card--roll-over
+		
 		&:hover, &:focus
 			.bc-card-img, .bc-card-text
 				top: -100%
@@ -24,8 +24,8 @@
 				&::before
 					top: 0
 	// .bc-card--slide-up 
-	&--plain-text
-		@extend .bc-card 
+	&.bc-card--plain-text
+		
 		justify-content: center
 		padding: var(--vertical-unit) var(--gutter)
 		transition: background-color var(--quicktrans) var(--easing)

@@ -14,6 +14,7 @@ body
 	line-height: 1.45  
 	background-color: var(--shade-f0)
 	overflow-x: hidden 
+	max-width: 100vw
 	
 h1, h2, h3, h4, h5 
 	margin-top: 0
@@ -209,27 +210,33 @@ iframe
 		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
 		
 .ah-corporate-individual 
-	position: relative
 	padding: 0
-	
 	overflow: hidden
 	> .bc-media-overlay
 		opacity: 0
 		z-index: 10
-	> img 
+	& &__media
+		position: relative
 		display: none
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		object-fit: cover
-		object-position: center
-		z-index: 0
+		> img 
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+			transition: opacity var(--medtrans) var(--easing), transform var(--medtrans) var(--easing)
+			opacity: 0
+			transform: scale(1.024)
+			&.is-active
+				opacity: 1
+				transform: scale(1)
+		
 	& &__sects
 		position: relative 
 		@include makeFlexbox(column, $align: stretch)
-		background-color: var(--shade-e0)
+		background-color: var(--white) 
 		z-index: 20
 	.bc-card
 		position: relative
@@ -240,11 +247,17 @@ iframe
 		color: var(--black)
 		background-color: transparent
 		transition: background-color var(--quicktrans) var(--easing)
-		&:first-of-type
-			border-bottom: 1px solid var(--shade-40)
-		&__body 
-			position: relative
-			z-index: 10
+		border-top: 			1px solid var(--shade-a0) 
+		&:last-of-type
+			border-bottom: 	1px solid var(--shade-a0) 
+		.bc-card
+			&__body 
+				position: relative
+				z-index: 10
+			&__icon
+				margin-bottom: calc(var(--vertical-unit) / 2)
+				max-width: var(--x-large-text)
+				max-height: var(--x-large-text)
 		p:last-of-type
 			margin-bottom: 0
 		a 
@@ -259,25 +272,41 @@ iframe
 			background-color: rgba($black, 0.1)
 			> .bc-media-overlay
 				opacity: 0.6
-	@media screen and (min-width: #{$tablet})
-		padding-top: ((9/16)*100%)
+		&.is-active
+			text-decoration: none
+			background-color: rgba($black, 0.1)
+			> .bc-media-overlay
+				opacity: 0.6
+		
+	&.is-active
+		.ah-corporate-individual
+			& &__media__is-active
+				opacity: 1
+	@media screen and (min-width: #{$tablet-large}) 
+		@include makeFlexbox($align: stretch)
 		background-color: rgba($black, 0.24)
+		& &__media 
+			display: block
+			overflow: hidden
+			
+			order: 1
+			width: 50%
 		> .bc-media-overlay
 			opacity: 0
 			z-index: 10
 		& &__corp-image
 			display: block
 		& &__sects
-			position: absolute
-			left: 0
-			bottom: 0
-			flex-direction: row
-			width: 100%
-			background-color: rgba($black, 0.24)
+			width: 50% 
 		.bc-card
-			color: var(--white)
-			a 
-				color: var(--white)
-			.svg-icon
-				fill: var(--white)
-			
+			border: none
+			&:last-child
+				border: none
+			padding-top: calc(var(--gutter) * 2)
+			padding-bottom: calc(var(--gutter) * 2)
+			.bc-card
+				&__icon
+					display: none
+					max-width: 	var(--large-text)
+					max-height: var(--large-text)
+	
