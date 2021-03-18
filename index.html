@@ -106,10 +106,13 @@
 		</div><!-- // .bc-featured-list -->
 	</section><!-- //Services -->
 	<section class="bc-container ah-corporate-individual" aria-label="Corporate and Individual Services">
-		<img src="./assets/media/archer--bw.jpg" alt="An image of an archer pointing" class="ah-corporate-individual__ind-image">
-		<img src="./assets/media/irish-family--bw.jpg" alt="An image of a group working" class="ah-corporate-individual__corp-image">
+		<div class="ah-corporate-individual__media" role="presentation"> 
+			
+			<img src="./assets/media/irish-family--bw.jpg" role="presentation" alt="" id="service#1"  class="is-active ah-corporate-individual__image">	
+			<img src="./assets/media/archer--bw.jpg" role="presentation" alt="" id="service#2" class="ah-corporate-individual__image">
+		</div>
 		<div class="ah-corporate-individual__sects ">
-			<div class="bc-card">
+			<div class="bc-card ah-corporate-individual__trigger" data-service='service#1'>
 				<div class="bc-card__body">
 					<svg class="svg-icon bc-card__icon">
 						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#community"></use>
@@ -126,8 +129,8 @@
 					</p><!-- // .bc-arrow-link -->	
 				</div><!-- // .bc-card__body -->
 				<!--<div class="bc-media-overlay"></div>-->
-			</div><!-- // .bc-card--plain-text -->
-			<div class="bc-card">
+			</div><!-- // .bc-card bc-card--plain-text -->
+			<div class="bc-card ah-corporate-individual__trigger" data-service='service#2'>
 				<div class="bc-card__body">
 					<svg class="svg-icon bc-card__icon">
 						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#user"></use>
@@ -145,7 +148,7 @@
 				</div>
 				
 				<!--<div class="bc-media-overlay"></div>-->
-			</div><!-- // .bc-card--plain-text -->
+			</div><!-- // .bc-card bc-card--plain-text -->
 		</div><!-- // .ah-corporate-individual__sects -->
 		<div class="bc-media-overlay"></div>
 	</section><!-- // .bc-container.ah-corporate-individual -->
@@ -153,52 +156,52 @@
 	<section class="bc-container" id="text-cards-collapsed" aria-label="Auto-grid; text cards onlyl collapsed">
 		<h1 class=""><code>Auto-grid; text only cards; collapsed</code></h1>
 		<div class="bc-grid--collapsed">  
-			<article class="bc-card--plain-text" aria-label="Plain text card #1"> 
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #1"> 
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #2">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #2">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #3">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #3">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #4">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #4">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #5">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #5">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #6"> 
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #6"> 
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #7">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #7">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #8">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #8">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #9">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #9">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
 			</article>
-			<article class="bc-card--plain-text" aria-label="Plain text card #10">
+			<article class="bc-card bc-card--plain-text" aria-label="Plain text card #10">
 				<h2 class="bc-card__heading">Hello heading</h2>	
 				<p>Hello paragraph</p>
 				<a href="single-page.html">Link right here</a>
@@ -343,17 +346,17 @@
 	<section class="bc-container bc-text-component" aria-label="Flickity text slider">
 		<h1><code>Flickity text slider</code></h1>
 		<div class="bc-flickity bc-flickity--text-slider"> 
-				<article class="bc-card--plain-text bc-flickity__slide" aria-label="Text slide #1"> 
+				<article class="bc-card bc-card--plain-text bc-flickity__slide" aria-label="Text slide #1"> 
 					<h2 class="bc-card__heading">Text slide #1</h2>	
 					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 					<a href="single-page.html">Link right here</a>
-				</article><!-- // .bc-card--plain-text -->
-				<article class="bc-card--plain-text bc-flickity__slide" aria-label="Text slide #2"> 
+				</article><!-- // .bc-card bc-card--plain-text -->
+				<article class="bc-card bc-card--plain-text bc-flickity__slide" aria-label="Text slide #2"> 
 					<h2 class="bc-card__heading">Text slide #2</h2>	
 					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 					<a href="single-page.html">Link right here</a>
-				</article><!-- // .bc-card--plain-text -->
+				</article><!-- // .bc-card bc-card--plain-text -->
 		</div><!-- //.bc-flickity -->
 	</section><!-- // Flickity text slider -->
 	
