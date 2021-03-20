@@ -40,6 +40,12 @@
 		@include makeFlexbox($justify: space-between, $align: center)
 	& &__body
 		flex: 1 0 80%
+		h1
+			&:first-of-type
+				margin-bottom: 0 
+		h1, p 
+			&:last-child 
+				margin-bottom: 0
 		&__content 
 			@include makeFlexbox($direction: column, $justify: center)
 			z-index: 10
@@ -63,10 +69,6 @@
 			@include linkHover
 				text-decoration: none
 				background-color: rgba($black, 0.2)
-	& &__heading, & &__tagline, p, & &__link 
-		margin-top: 0
-		margin-bottom: var(--vertical-unit)
-	
 	& &__tagline
 		font-size: var(--text-02)
 	& &__link 

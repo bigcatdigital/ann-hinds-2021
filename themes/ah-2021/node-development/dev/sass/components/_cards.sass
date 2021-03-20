@@ -31,9 +31,16 @@
 		transition: background-color var(--quicktrans) var(--easing)
 		
 	// .bc-card--plain-text
-	@at-root .bc-grid--collapsed 
-		.bc-card
-			margin-bottom: 0
+	@at-root 
+		.bc-grid
+			.bc-card
+				margin-bottom: 0
+	@at-root 
+		@media screen and (min-width: $tablet)
+			.bc-grid:not(.bc-grid--collapsed)
+				.bc-card
+					margin-bottom: var(--vertical-unit)
+	
 
 	&:hover
 		cursor: pointer

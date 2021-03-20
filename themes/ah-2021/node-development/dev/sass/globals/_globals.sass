@@ -18,6 +18,7 @@ $font-weight: 300
 $bold-weight: 600
 
 
+$text--1: 0.618rem
 $text--1: 0.7862rem
 $text-00: 1rem
 $text-01: 1.27rem
@@ -125,15 +126,22 @@ $text-04: 2.62rem
 	
 	
 	//* Golden ratio scale  *//
-
-	--x-small-text:	#{$text--2}
-	--small-text: #{$text--1}
-	--regular-text: #{$text-00}
-	--med-small-text: #{$text-01}
-	--med-text: #{$text-02}
-	--large-text: #{$text-03}
-	--x-large-text: #{$text-04}
+	//$text--1: 0.7862rem
+	//$text-00: 1rem
+	//$text-01: 1.27rem
+	//$text-02: 1.618rem
+	//$text-03: 2.05rem
+	//$text-04: 2.62rem	
+	--x-small-text:	#{$text--2} 	//0.618rem			
+	--small-text: #{$text--1} 		//0.782rem
+	--regular-text: #{$text-00} 	//1rem
+	--med-small-text: #{$text-01} //1.27rem
+	--med-text: #{$text-02} 			//1.618rem
+	--large-text: #{$text-03} 		//2.05rem
+	--x-large-text: #{$text-04} 	//2.62rem
 	
+
+
 	//* Animations */
 	--quicktrans: #{$quicktrans}
 	--medtrans: #{$medtrans}

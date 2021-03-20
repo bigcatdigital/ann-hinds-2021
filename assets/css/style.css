@@ -110,10 +110,10 @@ h1 {
   font-size: var(--large-text); }
 
 h2 {
-  font-size: var(--med-small-text); }
+  font-size: var(--med-text); }
 
 h3 {
-  font-size: var(--regular-text); }
+  font-size: var(--med-small-text); }
 
 h4 {
   font-size: var(--regular-text); }
@@ -307,6 +307,10 @@ iframe {
   max-width: var(--text-max-width);
   margin-left: auto;
   margin-right: auto; }
+
+/* Featured text */
+.bc-feature-heading {
+  font-size: var(--x-large-text) !important; }
 
 .bc-intro-paragraph {
   font-size: 1.27rem;
@@ -911,6 +915,10 @@ iframe {
     align-items: center; }
   .bc-hero .bc-hero__body, .bc-hero--full-screen .bc-hero__body {
     flex: 1 0 80%; }
+    .bc-hero .bc-hero__body h1:first-of-type, .bc-hero--full-screen .bc-hero__body h1:first-of-type {
+      margin-bottom: 0; }
+    .bc-hero .bc-hero__body h1:last-child, .bc-hero--full-screen .bc-hero__body h1:last-child, .bc-hero .bc-hero__body p:last-child, .bc-hero--full-screen .bc-hero__body p:last-child {
+      margin-bottom: 0; }
     .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
       display: flex;
       flex-direction: column;
@@ -942,39 +950,55 @@ iframe {
       text-decoration: underline;
       text-decoration: none;
       background-color: rgba(0, 0, 0, 0.2); }
-  .bc-hero .bc-hero__heading, .bc-hero--full-screen .bc-hero__heading, .bc-hero .bc-hero__tagline, .bc-hero--full-screen .bc-hero__tagline, .bc-hero p, .bc-hero--full-screen p, .bc-hero .bc-hero__link, .bc-hero--full-screen .bc-hero__link {
-    margin-top: 0;
-    margin-bottom: var(--vertical-unit); }
   .bc-hero .bc-hero__tagline, .bc-hero--full-screen .bc-hero__tagline {
     font-size: var(--text-02); }
   .bc-hero .bc-hero__link, .bc-hero--full-screen .bc-hero__link {
     font-weight: var(--bold-font-weight); }
 
 /* Hero components overlay */
-.bc-hero--full-screen {
+.bc-hero, .bc-hero--full-screen {
   width: calc(100% - (var(--gutter)));
   margin-top: calc(var(--vertical-unit) / 2);
   margin-left: calc(var(--gutter) / 2);
-  padding-top: 0;
-  padding-bottom: 0; }
-
-.bc-hero .bc-media-overlay, .bc-hero--full-screen .bc-media-overlay {
-  background-color: rgba(245, 0, 0, 0.64);
-  mix-blend-mode: color-burn; }
-
-.bc-hero .bc-hero__footer, .bc-hero--full-screen .bc-hero__footer {
-  justify-content: center; }
-  .bc-hero .bc-hero__footer__scroll::before, .bc-hero--full-screen .bc-hero__footer__scroll::before {
-    display: none; }
-  .bc-hero .bc-hero__footer__scroll:active, .bc-hero--full-screen .bc-hero__footer__scroll:active, .bc-hero .bc-hero__footer__scroll:hover, .bc-hero--full-screen .bc-hero__footer__scroll:hover, .bc-hero .bc-hero__footer__scroll:focus, .bc-hero--full-screen .bc-hero__footer__scroll:focus {
-    text-decoration: underline;
-    background-color: transparent; }
-
-.bc-hero .bc-hero__heading, .bc-hero--full-screen .bc-hero__heading {
-  margin-bottom: 0; }
-
-.bc-hero .bc-hero__tagline, .bc-hero--full-screen .bc-hero__tagline {
-  font-size: var(--med-text); }
+  padding-top: calc(var(--vertical-unit) * 6);
+  padding-bottom: calc(var(--vertical-unit) * 6); }
+  .bc-hero--full-screen {
+    padding-top: 0;
+    padding-bottom: 0; }
+  .bc-hero .bc-media-overlay, .bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(245, 0, 0, 0.64);
+    mix-blend-mode: color-burn; }
+  .bc-hero .bc-hero__footer, .bc-hero--full-screen .bc-hero__footer {
+    justify-content: center; }
+    .bc-hero .bc-hero__footer__scroll::before, .bc-hero--full-screen .bc-hero__footer__scroll::before {
+      display: none; }
+    .bc-hero .bc-hero__footer__scroll:active, .bc-hero--full-screen .bc-hero__footer__scroll:active, .bc-hero .bc-hero__footer__scroll:hover, .bc-hero--full-screen .bc-hero__footer__scroll:hover, .bc-hero .bc-hero__footer__scroll:focus, .bc-hero--full-screen .bc-hero__footer__scroll:focus {
+      text-decoration: underline;
+      background-color: transparent; }
+  .bc-hero .bc-hero__tagline, .bc-hero--full-screen .bc-hero__tagline {
+    font-size: var(--med-text); }
+  .bc-hero:not(.bc-hero--full-screen) .bc-hero__heading, .bc-hero--full-screen:not(.bc-hero--full-screen) .bc-hero__heading {
+    font-size: var(--med-text);
+    margin-bottom: 0; }
+  .bc-hero.ah-about-leader h1.bc-hero__heading, .ah-about-leader.bc-hero--full-screen h1.bc-hero__heading {
+    margin-bottom: calc(var(--vertical-unit) / 2); }
+  .bc-hero.ah-about-leader a:before, .ah-about-leader.bc-hero--full-screen a:before {
+    background-color: var(--brand-primary); }
+  .bc-hero.ah-about-leader .bc-media-overlay, .ah-about-leader.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(248, 172, 24, 0.64);
+    mix-blend-mode: multiply; }
+  @media screen and (min-width: 768px) {
+    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
+      grid-template-columns: auto; } }
+  @media screen and (min-width: 1024px) {
+    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 1240px) {
+    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
+      grid-template-columns: repeat(4, 1fr); }
+    .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
+      grid-column-start: 2;
+      grid-column-end: 4; } }
 
 /* Card components */
 /* Big Cat Cards */
@@ -1005,8 +1029,11 @@ iframe {
     justify-content: center;
     padding: var(--vertical-unit) var(--gutter);
     transition: background-color var(--quicktrans) var(--easing); }
-  .bc-grid--collapsed .bc-card {
+  .bc-grid .bc-card, .bc-grid--narrow-cols .bc-card, .bc-grid--collapsed .bc-card, .bc-grid--auto .bc-card, .bc-grid--x2 .bc-card, .bc-grid--x4 .bc-card, [class~="bc-grid--x"] .bc-card {
     margin-bottom: 0; }
+  @media screen and (min-width: 768px) {
+    .bc-grid:not(.bc-grid--collapsed) .bc-card, .bc-grid--narrow-cols:not(.bc-grid--collapsed) .bc-card, .bc-grid--collapsed:not(.bc-grid--collapsed) .bc-card, .bc-grid--auto:not(.bc-grid--collapsed) .bc-card, .bc-grid--x2:not(.bc-grid--collapsed) .bc-card, .bc-grid--x4:not(.bc-grid--collapsed) .bc-card, :not(.bc-grid--collapsed)[class~="bc-grid--x"] .bc-card {
+      margin-bottom: var(--vertical-unit); } }
   .bc-card:hover {
     cursor: pointer; }
 
