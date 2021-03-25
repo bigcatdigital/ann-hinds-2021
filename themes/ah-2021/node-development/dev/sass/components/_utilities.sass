@@ -4,6 +4,7 @@
 	@include mediaOverlay
 .bc-object-embed
 	@include objectEmbed
+	margin-bottom: var(--vertical-unit)
 .is-1x1 
 	@include is-1x1
 .is-3x2 
@@ -68,13 +69,13 @@
 	.has-#{$name}-background 
 		background-color: $colour
 		color: $colour-invert 	
-		a
-			color: $colour-invert 	
+		a, h1, h2, h3, h4, h5, h6, p, ul, li, blockquote
+			color: $colour-invert !important 	
 		.svg-icon
-			fill: $colour-invert 
+			fill: $colour-invert !important 
 		.bc-arrow-link
 			.svg-icon
-				fill: $colour-invert 
+				fill: $colour-invert !important
 	
 /* Shading */
 @each $name, $shade in $shades	
@@ -82,15 +83,6 @@
 	$shade: nth($shade, 1)
 	.has-#{$name}-background 
 		background-color: $shade
-		h1, h2, h3, h4, h5, p, ul, blockquote, a
+		h1, h2, h3, h4, h5, p, ul, blockquote
 			color: $shade-invert 	
-		a
-			color: $shade-invert 
-			@include linkHover
-				color: $shade-invert
-		.svg-icon
-			fill: $shade-invert 
-		.bc-arrow-link
-			.svg-icon
-				fill: $shade-invert
 	

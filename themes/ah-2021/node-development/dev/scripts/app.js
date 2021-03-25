@@ -68,17 +68,20 @@
 	if (debug) {
 		var i = 0;	
 	}
-	function bcLerpScroll($el, pos, target, speed = 0.075) {
+	function bcLerpScroll($el, pos, target, speed = 0.1) {
 		if (debug) {
 			console.log(`Lerp ${i}`); 
 			console.log(`---------`);
-			console.log(`$el: ${$el} pos: ${pos} target: ${target} speed: ${speed}`);
+			console.log(`$el: ${$el.classList} pos: ${pos} target: ${target} speed: ${speed}`);
 		}
 		let scrollOpts = {};
-		if (Math.round(target) > Math.round(pos)) {
+		//Scroll up
+		if (Math.floor(target) > Math.floor(pos)) {
 			if (debug) {
-				console.log(`${pos} ${target}`);
-				console.log(`${(pos - target)}`);
+				console.log(`Scroll down`);
+				console.log(`Pos: ${pos} Target: ${target}`);
+				console.log(`Rounded Pos: ${Math.floor(pos)} Rounded Target: ${Math.floor(target)}`);
+				console.log(`Pos - Target: ${(pos - target)}`);
 			}
 			pos += (target - pos) * speed; 
 			if (debug) { 
@@ -89,16 +92,18 @@
 				left: 0,
 				behavior: 'auto'
 			};
-			$el.scroll(0, pos);
+			$el.scroll(scrollOpts);
 			if (debug) {
-				console.log(`${$el.scrollY}`);
+				console.log(`${$el.scrollY}`); 
 				i++;
 			}
 			requestAnimationFrame(() => {
 				bcLerpScroll($el, pos, target); 
 			});
-		} else if (Math.round(pos) > Math.round(target)) {
+		//Scroll up
+		} else if (Math.floor(pos) > Math.floor(target)) {
 			if (debug) {
+				console.log(`Scroll up`);
 				console.log(`${pos} ${target}`);
 				console.log(`${(pos - target)}`);
 			}
@@ -120,6 +125,18 @@
 				bcLerpScroll($el, pos, target);
 			});
 		} else {
+			if (debug) {
+				console.log('Snap to target');
+			}
+			scrollOpts = {
+				top: target,
+				left: 0,
+				behavior: 'auto'
+			};
+			$el.scroll(scrollOpts);
+			if (debug) {
+				console.log(`Target: ${target} Final position: ${$el.scrollY}`);
+			}
 			return;
 		} 
 	}//Lerp scroll
@@ -130,15 +147,14 @@
 			en.wikipedia.org/wiki/Linear_interpolation
 			
 		return: null
-		$el: and element show/hide
-		pos: start position
-		target: target position
-		[speed]: scroll speed 
+		[$el]: and element to show/hide
+		[target]: target height
+		[speed]: animation speed 
 		[cb]: callback function
 	*/
-	function bcAdjustHeight($el, target, speed = 0.075, cb = null) {
+	function bcAdjustHeight($el, target, speed = 0.1, cb = null) {
 		bcLerpHeight($el, target, speed) ;	
-		function bcLerpHeight($el, target, speed = 0.075) {
+		function bcLerpHeight($el, target, speed = 0.1) {
 			if (debug) {
 				console.log(`$el height: ${$el.style.height}`); 
 			}
@@ -153,7 +169,7 @@
 				console.log(`Height: ${h} Target: ${target}`);
 				console.log(`Difference: ${(h - target)}`);
 			}
-			if (Math.round(target) > Math.round(h)) {
+			if (Math.floor(target) > Math.floor(h)) {
 				if (debug) {
 					console.log(`Target > Height`);
 					console.log(`Raw height to add: ${(target - h) * speed}`); 
@@ -170,7 +186,7 @@
 				requestAnimationFrame(() => {
 					bcLerpHeight($el, target, speed); 
 				});
-			} else if (Math.round(h) > Math.round(target)) {
+			} else if (Math.floor(h) > Math.floor(target)) {
 				if (debug) {
 					console.log(`Height > Target`);
 					console.log(`Raw height to subtract: ${(h - target) * speed}`); 
@@ -188,6 +204,8 @@
 					bcLerpHeight($el, target, speed);
 				});
 			} else {
+				//Snap to target height
+				$el.style.height = target + 'px';
 				return;
 			} 
 		}//Lerp scroll
@@ -225,7 +243,31 @@
 		}
 		
 	});
-	
+	/* Show/hide (accordion) components */
+	const showHideComponents = Array.from(document.querySelectorAll('.bc-show-hide'));
+	if (debug){
+		console.log(`Show/hide components`);
+		console.log(`--------------------`);
+		console.log(`Length: ${showHideComponents.length}`);
+		
+	}
+	showHideComponents.forEach(($showHideComponent, idx) => {
+		if (debug) {
+			console.log(`Show hide component #${idx + 1}:`);
+			console.log($showHideComponent.classList);	
+		}
+		const $nextSibling =  $showHideComponent.nextElementSibling;
+		const $skipLink =  $showHideComponent.querySelector('.bc-show-hide__skip');
+		if (debug) {
+			console.log(`Skip link: ${$skipLink.classList}`);
+			console.log(`Next sibling: ${$nextSibling}`);
+		}
+		if ($nextSibling.getAttribute('id') !== undefined) {
+			$skipLink.setAttribute('href', '#' + $nextSibling.getAttribute('id')) ;
+		} else {
+			$nextSibling.setAttribute('href', '#' + $skipLink.getAttribute('href').substr(1)) ;
+		}
+	});
 	/* Main site navigation */
 	function mainNavigationSetup() {
 		if (window.outerWidth >= 1024 ) {

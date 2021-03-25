@@ -30,12 +30,6 @@ h4
 	font-size: var(--regular-text) 
 .bc-small
 	font-size: var(--small-text) 
-p, ul, ol, blockquote 
-	margin-top: 0
-	margin-bottom: var(--vertical-unit)
-	font-weight: var(--font-weight) 
-button
-	font-family: var(--base-font)
 a 
 	position: relative
 	color: var(--link-color)
@@ -60,11 +54,21 @@ a
 	&.bc-no-underline
 		&::before
 			display: none
-			
+p, ul, ol, blockquote 
+	margin-top: 0
+	margin-bottom: var(--vertical-unit)
+	font-weight: var(--font-weight) 
+ul > li, ol > li
+	margin-bottom: calc(var(--vertical-unit) / 4)
+	&:last-child 
+		margin-bottom: 0
+button
+	font-family: var(--base-font)			
+
 blockquote
 	margin-left: 0
-	margin-top: calc(var(--vertical-unit) * 2)
-	margin-bottom: calc(var(--vertical-unit) * 2)
+	margin-top: calc(var(--vertical-unit) * 1.5)
+	margin-bottom: calc(var(--vertical-unit) * 1.5) 
 	padding-left: #{(28/14)}rem
 	border-left: 4px solid var(--shade-90)
 	p 
@@ -87,12 +91,21 @@ iframe
 	html
 		font-size: 20px
 
+/* Tables */
+@import 'components/tables';
+table
+	margin-top: calc(var(--vertical-unit) * 1.5)
+	margin-bottom: calc(var(--vertical-unit) * 1.5) 
+td
+	font-weight: var(--font-weight) 
 /* CSS utilities & animations */
 @import 'components/utilities.sass';
 /* Uitilities project overrides */
 .bc-arrow-link
 	.svg-icon
 		fill: $brand-primary
+.bc-intro-paragraph
+	font-weight: var(--med-font-weight)
 /* Animations */
 @import 'components/animations.sass';
 
@@ -172,17 +185,17 @@ iframe
 			&.bc-grid--x4
 				grid-template-columns: repeat(2, 1fr)
 	@media screen and (min-width: $laptop)
-			& &__body
-				&.bc-grid--x4
-					grid-template-columns: repeat(4, 1fr)
 			& &__body__content
-				grid-column-start: 2 
-				grid-column-end: 4
+				grid-column-start: 1 
+				grid-column-end: 2
 /* Card components */
 @import 'components/cards'; 
 .bc-card 
 	& &__media 
-		background-color: var(--shade-60) 
+		background-color: var(--black) 
+	& &__heading
+		font-size: (var(--med-small-text))
+		margin-bottom: calc(var(--vertical-unit) / 4)
 	&--plain-text 
 		background-color: var(--shade-e0)
 		@include linkHover
@@ -193,8 +206,7 @@ iframe
 @import 'components/bc-two-column-layout'; 
 /* Sliders - Flickity slider plugin */
 @import 'components/flickity-sliders'; 
-/* Tables */
-@import 'components/tables';
+
 
 //** Project Custom components **/
 /* Custom: services list, uses cards for list items - see Homepage Services */
@@ -237,6 +249,7 @@ iframe
 		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
 		
 .ah-corporate-individual 
+	position: relative
 	padding: 0
 	overflow: hidden
 	> .bc-media-overlay
@@ -336,4 +349,36 @@ iframe
 					display: none
 					max-width: 	var(--large-text)
 					max-height: var(--large-text)
+		
+/* Transcript for object embeds */
+.bc-object-transcript
+	margin-top: calc(var(--vertical-unit) / 2 * -1)
+	margin-bottom: var(--vertical-unit)
+	.svg-icon--list
+		margin-right: calc(var(--gutter) / 2)
+	& &__header
+		position: relative
+		@include makeFlexbox($align: center)
+		padding-bottom: var(--vertical-unit)
+	& &__show, & &__hide
+		position: absolute
+		right: 0
+		width:  var(--large-text)
+		height: var(--large-text)
+		z-index: 10
+	& &__hide
+		opacity: 0
+	& &__transcript
+		overflow: hidden
+		padding-left:  calc(var(--gutter) / 2)
+		padding-right: calc(var(--gutter) / 2)
+		transition: padding var(--medtrans) var(--easing)
+	&.bc-is-active
+		& &__transcript
+			padding-top: 		var(--vertical-unit)
+			padding-bottom: var(--vertical-unit)
+	
+		
+		
+		
 	

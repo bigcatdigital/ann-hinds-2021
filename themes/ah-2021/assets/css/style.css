@@ -28,6 +28,7 @@
   --yellow: #ff0;
   --green: #0f0;
   --blue: #00f;
+  --light-blue: #89D1FE;
   --purple: #4B0082;
   --violet:	#9400D3;
   --white: #fff;
@@ -65,6 +66,7 @@
   --text-line-height: 1.5;
   --heading-line-height: 1.3;
   --font-weight: 300;
+  --med-font-weight: 400;
   --bold-font-weight: 600;
   --black-font-weight: 900;
   --text-font-weight: 300;
@@ -121,14 +123,6 @@ h4 {
 .bc-small {
   font-size: var(--small-text); }
 
-p, ul, ol, blockquote {
-  margin-top: 0;
-  margin-bottom: var(--vertical-unit);
-  font-weight: var(--font-weight); }
-
-button {
-  font-family: var(--base-font); }
-
 a {
   position: relative;
   color: var(--link-color);
@@ -154,10 +148,23 @@ a {
   a.bc-no-underline::before {
     display: none; }
 
+p, ul, ol, blockquote {
+  margin-top: 0;
+  margin-bottom: var(--vertical-unit);
+  font-weight: var(--font-weight); }
+
+ul > li, ol > li {
+  margin-bottom: calc(var(--vertical-unit) / 4); }
+  ul > li:last-child, ol > li:last-child {
+    margin-bottom: 0; }
+
+button {
+  font-family: var(--base-font); }
+
 blockquote {
   margin-left: 0;
-  margin-top: calc(var(--vertical-unit) * 2);
-  margin-bottom: calc(var(--vertical-unit) * 2);
+  margin-top: calc(var(--vertical-unit) * 1.5);
+  margin-bottom: calc(var(--vertical-unit) * 1.5);
   padding-left: 2rem;
   border-left: 4px solid var(--shade-90); }
   blockquote p {
@@ -185,6 +192,33 @@ iframe {
   html {
     font-size: 20px; } }
 
+/* Tables */
+table {
+  margin-top: 0;
+  margin-bottom: var(--vertical-unit);
+  vertical-align: top;
+  border-collapse: collapse; }
+  table caption {
+    margin-bottom: var(--vertical-unit);
+    font-family: var(--sans-font);
+    font-weight: var(--bold-font-weight);
+    text-align: left; }
+  table th {
+    text-align: left;
+    border-bottom: 1px solid var(--black); }
+  table th, table td {
+    padding: calc(var(--gutter) / 8);
+    vertical-align: top; }
+  table th {
+    font-weight: var(--bold-font-weight); }
+
+table {
+  margin-top: calc(var(--vertical-unit) * 1.5);
+  margin-bottom: calc(var(--vertical-unit) * 1.5); }
+
+td {
+  font-weight: var(--font-weight); }
+
 /* CSS utilities & animations */
 /** Utilities **/
 /* Media */
@@ -204,7 +238,8 @@ iframe {
   position: relative;
   overflow: hidden;
   padding-top: 56.25%;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: var(--vertical-unit); }
   .bc-object-embed object, .bc-object-embed iframe {
     position: absolute;
     top: 0;
@@ -332,321 +367,180 @@ iframe {
 .has-red-background {
   background-color: #f00;
   color: #fff; }
-  .has-red-background a {
-    color: #fff; }
+  .has-red-background a, .has-red-background h1, .has-red-background h2, .has-red-background h3, .has-red-background h4, .has-red-background h5, .has-red-background h6, .has-red-background p, .has-red-background ul, .has-red-background li, .has-red-background blockquote {
+    color: #fff !important; }
   .has-red-background .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
   .has-red-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
 
 .has-orange-background {
   background-color: #f60;
   color: #000000; }
-  .has-orange-background a {
-    color: #000000; }
+  .has-orange-background a, .has-orange-background h1, .has-orange-background h2, .has-orange-background h3, .has-orange-background h4, .has-orange-background h5, .has-orange-background h6, .has-orange-background p, .has-orange-background ul, .has-orange-background li, .has-orange-background blockquote {
+    color: #000000 !important; }
   .has-orange-background .svg-icon {
-    fill: #000000; }
+    fill: #000000 !important; }
   .has-orange-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
+    fill: #000000 !important; }
 
 .has-yellow-background {
   background-color: #ff0;
   color: #000000; }
-  .has-yellow-background a {
-    color: #000000; }
+  .has-yellow-background a, .has-yellow-background h1, .has-yellow-background h2, .has-yellow-background h3, .has-yellow-background h4, .has-yellow-background h5, .has-yellow-background h6, .has-yellow-background p, .has-yellow-background ul, .has-yellow-background li, .has-yellow-background blockquote {
+    color: #000000 !important; }
   .has-yellow-background .svg-icon {
-    fill: #000000; }
+    fill: #000000 !important; }
   .has-yellow-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
+    fill: #000000 !important; }
 
 .has-green-background {
   background-color: #0f0;
   color: #fff; }
-  .has-green-background a {
-    color: #fff; }
+  .has-green-background a, .has-green-background h1, .has-green-background h2, .has-green-background h3, .has-green-background h4, .has-green-background h5, .has-green-background h6, .has-green-background p, .has-green-background ul, .has-green-background li, .has-green-background blockquote {
+    color: #fff !important; }
   .has-green-background .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
   .has-green-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
 
 .has-blue-background {
   background-color: #00f;
   color: #fff; }
-  .has-blue-background a {
-    color: #fff; }
+  .has-blue-background a, .has-blue-background h1, .has-blue-background h2, .has-blue-background h3, .has-blue-background h4, .has-blue-background h5, .has-blue-background h6, .has-blue-background p, .has-blue-background ul, .has-blue-background li, .has-blue-background blockquote {
+    color: #fff !important; }
   .has-blue-background .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
   .has-blue-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
 
 .has-puple-background {
   background-color: #4B0082;
   color: #fff; }
-  .has-puple-background a {
-    color: #fff; }
+  .has-puple-background a, .has-puple-background h1, .has-puple-background h2, .has-puple-background h3, .has-puple-background h4, .has-puple-background h5, .has-puple-background h6, .has-puple-background p, .has-puple-background ul, .has-puple-background li, .has-puple-background blockquote {
+    color: #fff !important; }
   .has-puple-background .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
   .has-puple-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
 
 .has-violet-background {
   background-color: #9400D3;
   color: #fff; }
-  .has-violet-background a {
-    color: #fff; }
+  .has-violet-background a, .has-violet-background h1, .has-violet-background h2, .has-violet-background h3, .has-violet-background h4, .has-violet-background h5, .has-violet-background h6, .has-violet-background p, .has-violet-background ul, .has-violet-background li, .has-violet-background blockquote {
+    color: #fff !important; }
   .has-violet-background .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
   .has-violet-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
 
 .has-brand-primary-background {
   background-color: #f50000;
   color: #fff; }
-  .has-brand-primary-background a {
-    color: #fff; }
+  .has-brand-primary-background a, .has-brand-primary-background h1, .has-brand-primary-background h2, .has-brand-primary-background h3, .has-brand-primary-background h4, .has-brand-primary-background h5, .has-brand-primary-background h6, .has-brand-primary-background p, .has-brand-primary-background ul, .has-brand-primary-background li, .has-brand-primary-background blockquote {
+    color: #fff !important; }
   .has-brand-primary-background .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
   .has-brand-primary-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
+    fill: #fff !important; }
 
 .has-brand-secondary-background {
   background-color: #F8AC18;
   color: #000000; }
-  .has-brand-secondary-background a {
-    color: #000000; }
+  .has-brand-secondary-background a, .has-brand-secondary-background h1, .has-brand-secondary-background h2, .has-brand-secondary-background h3, .has-brand-secondary-background h4, .has-brand-secondary-background h5, .has-brand-secondary-background h6, .has-brand-secondary-background p, .has-brand-secondary-background ul, .has-brand-secondary-background li, .has-brand-secondary-background blockquote {
+    color: #000000 !important; }
   .has-brand-secondary-background .svg-icon {
-    fill: #000000; }
+    fill: #000000 !important; }
   .has-brand-secondary-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
+    fill: #000000 !important; }
 
 /* Shading */
 .has-white-background {
   background-color: #fff; }
-  .has-white-background h1, .has-white-background h2, .has-white-background h3, .has-white-background h4, .has-white-background h5, .has-white-background p, .has-white-background ul, .has-white-background blockquote, .has-white-background a {
-    color: #000000; }
-  .has-white-background a {
-    color: #000000; }
-    .has-white-background a:active, .has-white-background a:hover, .has-white-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-white-background .svg-icon {
-    fill: #000000; }
-  .has-white-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
+  .has-white-background h1, .has-white-background h2, .has-white-background h3, .has-white-background h4, .has-white-background h5, .has-white-background p, .has-white-background ul, .has-white-background blockquote {
+    color: #303030; }
 
 .has-shade-f0-background {
   background-color: #f0f0f0; }
-  .has-shade-f0-background h1, .has-shade-f0-background h2, .has-shade-f0-background h3, .has-shade-f0-background h4, .has-shade-f0-background h5, .has-shade-f0-background p, .has-shade-f0-background ul, .has-shade-f0-background blockquote, .has-shade-f0-background a {
+  .has-shade-f0-background h1, .has-shade-f0-background h2, .has-shade-f0-background h3, .has-shade-f0-background h4, .has-shade-f0-background h5, .has-shade-f0-background p, .has-shade-f0-background ul, .has-shade-f0-background blockquote {
     color: #000000; }
-  .has-shade-f0-background a {
-    color: #000000; }
-    .has-shade-f0-background a:active, .has-shade-f0-background a:hover, .has-shade-f0-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-f0-background .svg-icon {
-    fill: #000000; }
-  .has-shade-f0-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-e0-background {
   background-color: #e0e0e0; }
-  .has-shade-e0-background h1, .has-shade-e0-background h2, .has-shade-e0-background h3, .has-shade-e0-background h4, .has-shade-e0-background h5, .has-shade-e0-background p, .has-shade-e0-background ul, .has-shade-e0-background blockquote, .has-shade-e0-background a {
+  .has-shade-e0-background h1, .has-shade-e0-background h2, .has-shade-e0-background h3, .has-shade-e0-background h4, .has-shade-e0-background h5, .has-shade-e0-background p, .has-shade-e0-background ul, .has-shade-e0-background blockquote {
     color: #000000; }
-  .has-shade-e0-background a {
-    color: #000000; }
-    .has-shade-e0-background a:active, .has-shade-e0-background a:hover, .has-shade-e0-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-e0-background .svg-icon {
-    fill: #000000; }
-  .has-shade-e0-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-d0-background {
   background-color: #d0d0d0; }
-  .has-shade-d0-background h1, .has-shade-d0-background h2, .has-shade-d0-background h3, .has-shade-d0-background h4, .has-shade-d0-background h5, .has-shade-d0-background p, .has-shade-d0-background ul, .has-shade-d0-background blockquote, .has-shade-d0-background a {
+  .has-shade-d0-background h1, .has-shade-d0-background h2, .has-shade-d0-background h3, .has-shade-d0-background h4, .has-shade-d0-background h5, .has-shade-d0-background p, .has-shade-d0-background ul, .has-shade-d0-background blockquote {
     color: #000000; }
-  .has-shade-d0-background a {
-    color: #000000; }
-    .has-shade-d0-background a:active, .has-shade-d0-background a:hover, .has-shade-d0-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-d0-background .svg-icon {
-    fill: #000000; }
-  .has-shade-d0-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-c0-background {
   background-color: #b0b0b0; }
-  .has-shade-c0-background h1, .has-shade-c0-background h2, .has-shade-c0-background h3, .has-shade-c0-background h4, .has-shade-c0-background h5, .has-shade-c0-background p, .has-shade-c0-background ul, .has-shade-c0-background blockquote, .has-shade-c0-background a {
+  .has-shade-c0-background h1, .has-shade-c0-background h2, .has-shade-c0-background h3, .has-shade-c0-background h4, .has-shade-c0-background h5, .has-shade-c0-background p, .has-shade-c0-background ul, .has-shade-c0-background blockquote {
     color: #000000; }
-  .has-shade-c0-background a {
-    color: #000000; }
-    .has-shade-c0-background a:active, .has-shade-c0-background a:hover, .has-shade-c0-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-c0-background .svg-icon {
-    fill: #000000; }
-  .has-shade-c0-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-b0-background {
   background-color: #c0c0c0; }
-  .has-shade-b0-background h1, .has-shade-b0-background h2, .has-shade-b0-background h3, .has-shade-b0-background h4, .has-shade-b0-background h5, .has-shade-b0-background p, .has-shade-b0-background ul, .has-shade-b0-background blockquote, .has-shade-b0-background a {
+  .has-shade-b0-background h1, .has-shade-b0-background h2, .has-shade-b0-background h3, .has-shade-b0-background h4, .has-shade-b0-background h5, .has-shade-b0-background p, .has-shade-b0-background ul, .has-shade-b0-background blockquote {
     color: #000000; }
-  .has-shade-b0-background a {
-    color: #000000; }
-    .has-shade-b0-background a:active, .has-shade-b0-background a:hover, .has-shade-b0-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-b0-background .svg-icon {
-    fill: #000000; }
-  .has-shade-b0-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-a0-background {
   background-color: #a0a0a0; }
-  .has-shade-a0-background h1, .has-shade-a0-background h2, .has-shade-a0-background h3, .has-shade-a0-background h4, .has-shade-a0-background h5, .has-shade-a0-background p, .has-shade-a0-background ul, .has-shade-a0-background blockquote, .has-shade-a0-background a {
+  .has-shade-a0-background h1, .has-shade-a0-background h2, .has-shade-a0-background h3, .has-shade-a0-background h4, .has-shade-a0-background h5, .has-shade-a0-background p, .has-shade-a0-background ul, .has-shade-a0-background blockquote {
     color: #000000; }
-  .has-shade-a0-background a {
-    color: #000000; }
-    .has-shade-a0-background a:active, .has-shade-a0-background a:hover, .has-shade-a0-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-a0-background .svg-icon {
-    fill: #000000; }
-  .has-shade-a0-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-90-background {
   background-color: #909090; }
-  .has-shade-90-background h1, .has-shade-90-background h2, .has-shade-90-background h3, .has-shade-90-background h4, .has-shade-90-background h5, .has-shade-90-background p, .has-shade-90-background ul, .has-shade-90-background blockquote, .has-shade-90-background a {
+  .has-shade-90-background h1, .has-shade-90-background h2, .has-shade-90-background h3, .has-shade-90-background h4, .has-shade-90-background h5, .has-shade-90-background p, .has-shade-90-background ul, .has-shade-90-background blockquote {
     color: #000000; }
-  .has-shade-90-background a {
-    color: #000000; }
-    .has-shade-90-background a:active, .has-shade-90-background a:hover, .has-shade-90-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-90-background .svg-icon {
-    fill: #000000; }
-  .has-shade-90-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-80-background {
   background-color: #808080; }
-  .has-shade-80-background h1, .has-shade-80-background h2, .has-shade-80-background h3, .has-shade-80-background h4, .has-shade-80-background h5, .has-shade-80-background p, .has-shade-80-background ul, .has-shade-80-background blockquote, .has-shade-80-background a {
+  .has-shade-80-background h1, .has-shade-80-background h2, .has-shade-80-background h3, .has-shade-80-background h4, .has-shade-80-background h5, .has-shade-80-background p, .has-shade-80-background ul, .has-shade-80-background blockquote {
     color: #000000; }
-  .has-shade-80-background a {
-    color: #000000; }
-    .has-shade-80-background a:active, .has-shade-80-background a:hover, .has-shade-80-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-80-background .svg-icon {
-    fill: #000000; }
-  .has-shade-80-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-70-background {
   background-color: #707070; }
-  .has-shade-70-background h1, .has-shade-70-background h2, .has-shade-70-background h3, .has-shade-70-background h4, .has-shade-70-background h5, .has-shade-70-background p, .has-shade-70-background ul, .has-shade-70-background blockquote, .has-shade-70-background a {
+  .has-shade-70-background h1, .has-shade-70-background h2, .has-shade-70-background h3, .has-shade-70-background h4, .has-shade-70-background h5, .has-shade-70-background p, .has-shade-70-background ul, .has-shade-70-background blockquote {
     color: #000000; }
-  .has-shade-70-background a {
-    color: #000000; }
-    .has-shade-70-background a:active, .has-shade-70-background a:hover, .has-shade-70-background a:focus {
-      text-decoration: underline;
-      color: #000000; }
-  .has-shade-70-background .svg-icon {
-    fill: #000000; }
-  .has-shade-70-background .bc-arrow-link .svg-icon {
-    fill: #000000; }
 
 .has-shade-60-background {
   background-color: #606060; }
-  .has-shade-60-background h1, .has-shade-60-background h2, .has-shade-60-background h3, .has-shade-60-background h4, .has-shade-60-background h5, .has-shade-60-background p, .has-shade-60-background ul, .has-shade-60-background blockquote, .has-shade-60-background a {
+  .has-shade-60-background h1, .has-shade-60-background h2, .has-shade-60-background h3, .has-shade-60-background h4, .has-shade-60-background h5, .has-shade-60-background p, .has-shade-60-background ul, .has-shade-60-background blockquote {
     color: #fff; }
-  .has-shade-60-background a {
-    color: #fff; }
-    .has-shade-60-background a:active, .has-shade-60-background a:hover, .has-shade-60-background a:focus {
-      text-decoration: underline;
-      color: #fff; }
-  .has-shade-60-background .svg-icon {
-    fill: #fff; }
-  .has-shade-60-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
 
 .has-shade-50-background {
   background-color: #505050; }
-  .has-shade-50-background h1, .has-shade-50-background h2, .has-shade-50-background h3, .has-shade-50-background h4, .has-shade-50-background h5, .has-shade-50-background p, .has-shade-50-background ul, .has-shade-50-background blockquote, .has-shade-50-background a {
+  .has-shade-50-background h1, .has-shade-50-background h2, .has-shade-50-background h3, .has-shade-50-background h4, .has-shade-50-background h5, .has-shade-50-background p, .has-shade-50-background ul, .has-shade-50-background blockquote {
     color: #fff; }
-  .has-shade-50-background a {
-    color: #fff; }
-    .has-shade-50-background a:active, .has-shade-50-background a:hover, .has-shade-50-background a:focus {
-      text-decoration: underline;
-      color: #fff; }
-  .has-shade-50-background .svg-icon {
-    fill: #fff; }
-  .has-shade-50-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
 
 .has-shade-40-background {
   background-color: #404040; }
-  .has-shade-40-background h1, .has-shade-40-background h2, .has-shade-40-background h3, .has-shade-40-background h4, .has-shade-40-background h5, .has-shade-40-background p, .has-shade-40-background ul, .has-shade-40-background blockquote, .has-shade-40-background a {
+  .has-shade-40-background h1, .has-shade-40-background h2, .has-shade-40-background h3, .has-shade-40-background h4, .has-shade-40-background h5, .has-shade-40-background p, .has-shade-40-background ul, .has-shade-40-background blockquote {
     color: #fff; }
-  .has-shade-40-background a {
-    color: #fff; }
-    .has-shade-40-background a:active, .has-shade-40-background a:hover, .has-shade-40-background a:focus {
-      text-decoration: underline;
-      color: #fff; }
-  .has-shade-40-background .svg-icon {
-    fill: #fff; }
-  .has-shade-40-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
 
 .has-shade-30-background {
   background-color: #303030; }
-  .has-shade-30-background h1, .has-shade-30-background h2, .has-shade-30-background h3, .has-shade-30-background h4, .has-shade-30-background h5, .has-shade-30-background p, .has-shade-30-background ul, .has-shade-30-background blockquote, .has-shade-30-background a {
+  .has-shade-30-background h1, .has-shade-30-background h2, .has-shade-30-background h3, .has-shade-30-background h4, .has-shade-30-background h5, .has-shade-30-background p, .has-shade-30-background ul, .has-shade-30-background blockquote {
     color: #fff; }
-  .has-shade-30-background a {
-    color: #fff; }
-    .has-shade-30-background a:active, .has-shade-30-background a:hover, .has-shade-30-background a:focus {
-      text-decoration: underline;
-      color: #fff; }
-  .has-shade-30-background .svg-icon {
-    fill: #fff; }
-  .has-shade-30-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
 
 .has-shade-20-background {
   background-color: #202020; }
-  .has-shade-20-background h1, .has-shade-20-background h2, .has-shade-20-background h3, .has-shade-20-background h4, .has-shade-20-background h5, .has-shade-20-background p, .has-shade-20-background ul, .has-shade-20-background blockquote, .has-shade-20-background a {
+  .has-shade-20-background h1, .has-shade-20-background h2, .has-shade-20-background h3, .has-shade-20-background h4, .has-shade-20-background h5, .has-shade-20-background p, .has-shade-20-background ul, .has-shade-20-background blockquote {
     color: #fff; }
-  .has-shade-20-background a {
-    color: #fff; }
-    .has-shade-20-background a:active, .has-shade-20-background a:hover, .has-shade-20-background a:focus {
-      text-decoration: underline;
-      color: #fff; }
-  .has-shade-20-background .svg-icon {
-    fill: #fff; }
-  .has-shade-20-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
 
 .has-shade-10-background {
   background-color: #101010; }
-  .has-shade-10-background h1, .has-shade-10-background h2, .has-shade-10-background h3, .has-shade-10-background h4, .has-shade-10-background h5, .has-shade-10-background p, .has-shade-10-background ul, .has-shade-10-background blockquote, .has-shade-10-background a {
+  .has-shade-10-background h1, .has-shade-10-background h2, .has-shade-10-background h3, .has-shade-10-background h4, .has-shade-10-background h5, .has-shade-10-background p, .has-shade-10-background ul, .has-shade-10-background blockquote {
     color: #fff; }
-  .has-shade-10-background a {
-    color: #fff; }
-    .has-shade-10-background a:active, .has-shade-10-background a:hover, .has-shade-10-background a:focus {
-      text-decoration: underline;
-      color: #fff; }
-  .has-shade-10-background .svg-icon {
-    fill: #fff; }
-  .has-shade-10-background .bc-arrow-link .svg-icon {
-    fill: #fff; }
 
 /* Uitilities project overrides */
 .bc-arrow-link .svg-icon {
   fill: #f50000; }
+
+.bc-intro-paragraph {
+  font-weight: var(--med-font-weight); }
 
 /* Animations */
 .bc-fade-in-up {
@@ -994,11 +888,9 @@ iframe {
     .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
       grid-template-columns: repeat(2, 1fr); } }
   @media screen and (min-width: 1240px) {
-    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
-      grid-template-columns: repeat(4, 1fr); }
     .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
-      grid-column-start: 2;
-      grid-column-end: 4; } }
+      grid-column-start: 1;
+      grid-column-end: 2; } }
 
 /* Card components */
 /* Big Cat Cards */
@@ -1038,7 +930,11 @@ iframe {
     cursor: pointer; }
 
 .bc-card .bc-card__media {
-  background-color: var(--shade-60); }
+  background-color: var(--black); }
+
+.bc-card .bc-card__heading {
+  font-size: var(--med-small-text);
+  margin-bottom: calc(var(--vertical-unit) / 4); }
 
 .bc-card--plain-text {
   background-color: var(--shade-e0); }
@@ -1106,26 +1002,6 @@ iframe {
       padding-left: var(--gutter);
       padding-right: var(--gutter); }
 
-/* Tables */
-table {
-  margin-top: 0;
-  margin-bottom: var(--vertical-unit);
-  vertical-align: top;
-  border-collapse: collapse; }
-  table caption {
-    margin-bottom: var(--vertical-unit);
-    font-family: var(--sans-font);
-    font-weight: var(--bold-font-weight);
-    text-align: left; }
-  table th {
-    text-align: left;
-    border-bottom: 1px solid var(--black); }
-  table th, table td {
-    padding: calc(var(--gutter) / 8);
-    vertical-align: top; }
-  table th {
-    font-weight: var(--bold-font-weight); }
-
 /* Custom: services list, uses cards for list items - see Homepage Services */
 .bc-featured-list {
   padding-left: 1.42857rem;
@@ -1162,6 +1038,7 @@ table {
       grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr)); } }
 
 .ah-corporate-individual {
+  position: relative;
   padding: 0;
   overflow: hidden; }
   .ah-corporate-individual > .bc-media-overlay {
@@ -1268,5 +1145,36 @@ table {
           display: none;
           max-width: var(--large-text);
           max-height: var(--large-text); } }
+
+/* Transcript for object embeds */
+.bc-object-transcript {
+  margin-top: calc(var(--vertical-unit) / 2 * -1);
+  margin-bottom: var(--vertical-unit); }
+  .bc-object-transcript .svg-icon--list {
+    margin-right: calc(var(--gutter) / 2); }
+  .bc-object-transcript .bc-object-transcript__header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-bottom: var(--vertical-unit); }
+  .bc-object-transcript .bc-object-transcript__show, .bc-object-transcript .bc-object-transcript__hide {
+    position: absolute;
+    right: 0;
+    width: var(--large-text);
+    height: var(--large-text);
+    z-index: 10; }
+  .bc-object-transcript .bc-object-transcript__hide {
+    opacity: 0; }
+  .bc-object-transcript .bc-object-transcript__transcript {
+    overflow: hidden;
+    padding-left: calc(var(--gutter) / 2);
+    padding-right: calc(var(--gutter) / 2);
+    transition: padding var(--medtrans) var(--easing); }
+  .bc-object-transcript.bc-is-active .bc-object-transcript.bc-is-active__transcript {
+    padding-top: var(--vertical-unit);
+    padding-bottom: var(--vertical-unit); }
 
 /*# sourceMappingURL=style.css.map */
