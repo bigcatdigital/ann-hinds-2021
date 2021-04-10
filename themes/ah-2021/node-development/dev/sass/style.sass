@@ -351,33 +351,58 @@ td
 					max-height: var(--large-text)
 		
 /* Transcript for object embeds */
-.bc-object-transcript
+.bc-show-hide
 	margin-top: calc(var(--vertical-unit) / 2 * -1)
 	margin-bottom: var(--vertical-unit)
-	.svg-icon--list
-		margin-right: calc(var(--gutter) / 2)
-	& &__header
+	& &__toggle
 		position: relative
 		@include makeFlexbox($align: center)
 		padding-bottom: var(--vertical-unit)
-	& &__show, & &__hide
+		font-family: var(--heading-font)
+		font-size: var(--text-01)
+		font-weight: var(--bold-font-weight)
+		text-decoration: none
+		@include linkHover
+			text-decoration: underline
+			cursor: pointer
+		&.bc-is-active 
+			.bc-show-hide-icon
+				&.bc-show-hide-icon__hide
+					opacity: 1
+				&.bc-show-hide-icon__show
+					opacity: 0
+	& &-icon
 		position: absolute
 		right: 0
-		width:  var(--large-text)
-		height: var(--large-text)
-		z-index: 10
-	& &__hide
-		opacity: 0
-	& &__transcript
-		overflow: hidden
+		width:  var(--text-02)
+		height: var(--text-02)  
+		opacity: 1
+		z-index: 10		
+		//transition: opacity var(--quicktrans) var(--easing)
+		&.bc-show-hide-icon__hide
+			opacity: 0
+			transform: rotate(180deg)
+	& &__hide-icon
+		opacity: 0	
+	& &__body
+		height: 0
+		overflow: hidden 
 		padding-left:  calc(var(--gutter) / 2)
 		padding-right: calc(var(--gutter) / 2)
-		transition: padding var(--medtrans) var(--easing)
-	&.bc-is-active
-		& &__transcript
+		transition: padding var(--medtrans) var(--easing), height var(--medtrans) var(--easing)
+		&.bc-is-active
 			padding-top: 		var(--vertical-unit)
 			padding-bottom: var(--vertical-unit)
 	
+/* Show/hide comoponent overrides */
+.bc-show-hide
+	& &__toggle
+		color: $black
+		@include linkHover
+			&:before
+				display: none
+		.svg-icon--list
+			margin-right: var(--gutter)
 		
 		
 		

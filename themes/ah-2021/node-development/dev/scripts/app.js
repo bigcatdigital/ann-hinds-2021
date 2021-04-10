@@ -243,31 +243,75 @@
 		}
 		
 	});
-	/* Show/hide (accordion) components */
+	/* Show/hide (accordion) components
+	 * $el: element to show or hide
+	 * target: element target height as an integer
+	 * cb: a callback
+	*/
+	function bcShowHide($el, target, cb) {
+		if (debug) {
+			console.log('bcShowHide function, target height:');	
+			console.log(target);	
+		}
+		target = Number.parseInt(target);
+		$el.style.height = target + 'px';
+		if (typeof cb === 'function') {
+			$el.addEventListener('transitionend', () => {
+				requestAnimationFrame(() => {
+					cb();
+				});	
+				$el.removeEventListener('transitionend', arguments.callee);
+			});	
+		}
+	}//bcShowHide()
 	const showHideComponents = Array.from(document.querySelectorAll('.bc-show-hide'));
 	if (debug){
-		console.log(`Show/hide components`);
+		console.log(`Show/hide accordion components`);
 		console.log(`--------------------`);
 		console.log(`Length: ${showHideComponents.length}`);
-		
 	}
 	showHideComponents.forEach(($showHideComponent, idx) => {
 		if (debug) {
-			console.log(`Show hide component #${idx + 1}:`);
+			console.log(`Accordion component #${idx + 1}:`);
 			console.log($showHideComponent.classList);	
 		}
-		const $nextSibling =  $showHideComponent.nextElementSibling;
-		const $skipLink =  $showHideComponent.querySelector('.bc-show-hide__skip');
-		if (debug) {
-			console.log(`Skip link: ${$skipLink.classList}`);
-			console.log(`Next sibling: ${$nextSibling}`);
-		}
-		if ($nextSibling.getAttribute('id') !== undefined) {
-			$skipLink.setAttribute('href', '#' + $nextSibling.getAttribute('id')) ;
-		} else {
-			$nextSibling.setAttribute('href', '#' + $skipLink.getAttribute('href').substr(1)) ;
-		}
+		//Show hide toggles
+		const showHideToggles = Array.from($showHideComponent.querySelectorAll('.bc-show-hide__toggle'));
+		showHideToggles.forEach(($showHideToggle) => {
+			const $showHideBody = $showHideToggle.nextElementSibling;
+			//Accordion closer in the accordion body - always closes the body if it is open
+			const $showHideBodyClose = $showHideBody.querySelector('.bc-show-hide__hide');
+			$showHideBodyClose.addEventListener('click', () => {
+				if ($showHideToggle.classList.contains('bc-is-active')) { 
+					bcShowHide($showHideBody, 0);
+					$showHideToggle.classList.remove('bc-is-active');
+				}
+			});
+			if (debug) {
+				console.log('Accordion body scrollHeight: ');
+				console.log($showHideBody.scrollHeight);
+				console.log('Accordion toggle classlist: ');
+				console.log($showHideToggle.classList);
+			}
+			$showHideToggle.addEventListener('click', (evt) => {
+				evt.preventDefault();
+				if ($showHideToggle.classList.contains('bc-is-active')) {
+					if (debug) {
+						console.log('This accordion body is active.');
+					}
+					bcShowHide($showHideBody,  0);
+					$showHideToggle.classList.remove('bc-is-active');
+				} else {
+					if (debug) {
+						console.log('This accordion body is inactive.');
+					}
+					bcShowHide($showHideBody, $showHideBody.scrollHeight);	
+					$showHideToggle.classList.add('bc-is-active');	
+				}
+			});
+		});
 	});
+	
 	/* Main site navigation */
 	function mainNavigationSetup() {
 		if (window.outerWidth >= 1024 ) {
