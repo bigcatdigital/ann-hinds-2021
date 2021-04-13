@@ -69,6 +69,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "set-env-vars": "export projdev=$(pwd) && cd ../../../ && export projroot=$(pwd) && cd $projdev && echo projdev: $projdev && echo projroot: $projroot",
     "start": "npm run watch:sass & npm run watch:css & npm run watch:media & npm run watch:svg & npm run watch:js & npm run watch:css",
     "build": "npm run sass:build & npm run copy:css & run babeljs & npm run uglifyjs & npm run concatjs & npm run postcss & npm run criticalcss ",
     "stop": "stop http-server",
