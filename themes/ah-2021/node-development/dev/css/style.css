@@ -53,7 +53,7 @@
   --brand-secondary: #F8AC18;
   --brand-primary-invert: 	 #fff;
   --brand-darker-invert: 	 #fff;
-  --brand-secondary-invert: #000000;
+  --brand-secondary-invert: #fff;
   --serif-font: Quattrocento, serif;
   --sans-font: Montserrat, sans-serif;
   --base-font: Montserrat, sans-serif;
@@ -363,96 +363,158 @@ td {
   overflow: hidden; }
 
 /* Colours */
-/* Coloring */
-.has-red-background {
-  background-color: #f00;
+.has-red-background, .has-red-overlay {
   color: #fff; }
-  .has-red-background a, .has-red-background h1, .has-red-background h2, .has-red-background h3, .has-red-background h4, .has-red-background h5, .has-red-background h6, .has-red-background p, .has-red-background ul, .has-red-background li, .has-red-background blockquote {
+  .has-red-background a, .has-red-background h1, .has-red-background h2, .has-red-background h3, .has-red-background h4, .has-red-background h5, .has-red-background h6, .has-red-background p, .has-red-background ul, .has-red-background li, .has-red-background blockquote, .has-red-overlay a, .has-red-overlay h1, .has-red-overlay h2, .has-red-overlay h3, .has-red-overlay h4, .has-red-overlay h5, .has-red-overlay h6, .has-red-overlay p, .has-red-overlay ul, .has-red-overlay li, .has-red-overlay blockquote {
     color: #fff !important; }
-  .has-red-background .svg-icon {
+  .has-red-background a::before, .has-red-overlay a::before {
+    background-color: #fff; }
+  .has-red-background .svg-icon, .has-red-overlay .svg-icon {
     fill: #fff !important; }
-  .has-red-background .bc-arrow-link .svg-icon {
+  .has-red-background .bc-arrow-link .svg-icon, .has-red-overlay .bc-arrow-link .svg-icon {
+    fill: #fff !important; }
+
+.has-red-background {
+  background-color: #f00; }
+
+.has-red-overlay .bc-media-overlay {
+  background-color: rgba(255, 0, 0, 0.24); }
+
+.has-orange-background, .has-orange-overlay {
+  color: #fff; }
+  .has-orange-background a, .has-orange-background h1, .has-orange-background h2, .has-orange-background h3, .has-orange-background h4, .has-orange-background h5, .has-orange-background h6, .has-orange-background p, .has-orange-background ul, .has-orange-background li, .has-orange-background blockquote, .has-orange-overlay a, .has-orange-overlay h1, .has-orange-overlay h2, .has-orange-overlay h3, .has-orange-overlay h4, .has-orange-overlay h5, .has-orange-overlay h6, .has-orange-overlay p, .has-orange-overlay ul, .has-orange-overlay li, .has-orange-overlay blockquote {
+    color: #fff !important; }
+  .has-orange-background a::before, .has-orange-overlay a::before {
+    background-color: #fff; }
+  .has-orange-background .svg-icon, .has-orange-overlay .svg-icon {
+    fill: #fff !important; }
+  .has-orange-background .bc-arrow-link .svg-icon, .has-orange-overlay .bc-arrow-link .svg-icon {
     fill: #fff !important; }
 
 .has-orange-background {
-  background-color: #f60;
+  background-color: #f60; }
+
+.has-orange-overlay .bc-media-overlay {
+  background-color: rgba(255, 102, 0, 0.24); }
+
+.has-yellow-background, .has-yellow-overlay {
   color: #000000; }
-  .has-orange-background a, .has-orange-background h1, .has-orange-background h2, .has-orange-background h3, .has-orange-background h4, .has-orange-background h5, .has-orange-background h6, .has-orange-background p, .has-orange-background ul, .has-orange-background li, .has-orange-background blockquote {
+  .has-yellow-background a, .has-yellow-background h1, .has-yellow-background h2, .has-yellow-background h3, .has-yellow-background h4, .has-yellow-background h5, .has-yellow-background h6, .has-yellow-background p, .has-yellow-background ul, .has-yellow-background li, .has-yellow-background blockquote, .has-yellow-overlay a, .has-yellow-overlay h1, .has-yellow-overlay h2, .has-yellow-overlay h3, .has-yellow-overlay h4, .has-yellow-overlay h5, .has-yellow-overlay h6, .has-yellow-overlay p, .has-yellow-overlay ul, .has-yellow-overlay li, .has-yellow-overlay blockquote {
     color: #000000 !important; }
-  .has-orange-background .svg-icon {
+  .has-yellow-background a::before, .has-yellow-overlay a::before {
+    background-color: #000000; }
+  .has-yellow-background .svg-icon, .has-yellow-overlay .svg-icon {
     fill: #000000 !important; }
-  .has-orange-background .bc-arrow-link .svg-icon {
+  .has-yellow-background .bc-arrow-link .svg-icon, .has-yellow-overlay .bc-arrow-link .svg-icon {
     fill: #000000 !important; }
 
 .has-yellow-background {
-  background-color: #ff0;
-  color: #000000; }
-  .has-yellow-background a, .has-yellow-background h1, .has-yellow-background h2, .has-yellow-background h3, .has-yellow-background h4, .has-yellow-background h5, .has-yellow-background h6, .has-yellow-background p, .has-yellow-background ul, .has-yellow-background li, .has-yellow-background blockquote {
-    color: #000000 !important; }
-  .has-yellow-background .svg-icon {
-    fill: #000000 !important; }
-  .has-yellow-background .bc-arrow-link .svg-icon {
-    fill: #000000 !important; }
+  background-color: #ff0; }
+
+.has-yellow-overlay .bc-media-overlay {
+  background-color: rgba(255, 255, 0, 0.24); }
+
+.has-green-background, .has-green-overlay {
+  color: #fff; }
+  .has-green-background a, .has-green-background h1, .has-green-background h2, .has-green-background h3, .has-green-background h4, .has-green-background h5, .has-green-background h6, .has-green-background p, .has-green-background ul, .has-green-background li, .has-green-background blockquote, .has-green-overlay a, .has-green-overlay h1, .has-green-overlay h2, .has-green-overlay h3, .has-green-overlay h4, .has-green-overlay h5, .has-green-overlay h6, .has-green-overlay p, .has-green-overlay ul, .has-green-overlay li, .has-green-overlay blockquote {
+    color: #fff !important; }
+  .has-green-background a::before, .has-green-overlay a::before {
+    background-color: #fff; }
+  .has-green-background .svg-icon, .has-green-overlay .svg-icon {
+    fill: #fff !important; }
+  .has-green-background .bc-arrow-link .svg-icon, .has-green-overlay .bc-arrow-link .svg-icon {
+    fill: #fff !important; }
 
 .has-green-background {
-  background-color: #0f0;
+  background-color: #0f0; }
+
+.has-green-overlay .bc-media-overlay {
+  background-color: rgba(0, 255, 0, 0.24); }
+
+.has-blue-background, .has-blue-overlay {
   color: #fff; }
-  .has-green-background a, .has-green-background h1, .has-green-background h2, .has-green-background h3, .has-green-background h4, .has-green-background h5, .has-green-background h6, .has-green-background p, .has-green-background ul, .has-green-background li, .has-green-background blockquote {
+  .has-blue-background a, .has-blue-background h1, .has-blue-background h2, .has-blue-background h3, .has-blue-background h4, .has-blue-background h5, .has-blue-background h6, .has-blue-background p, .has-blue-background ul, .has-blue-background li, .has-blue-background blockquote, .has-blue-overlay a, .has-blue-overlay h1, .has-blue-overlay h2, .has-blue-overlay h3, .has-blue-overlay h4, .has-blue-overlay h5, .has-blue-overlay h6, .has-blue-overlay p, .has-blue-overlay ul, .has-blue-overlay li, .has-blue-overlay blockquote {
     color: #fff !important; }
-  .has-green-background .svg-icon {
+  .has-blue-background a::before, .has-blue-overlay a::before {
+    background-color: #fff; }
+  .has-blue-background .svg-icon, .has-blue-overlay .svg-icon {
     fill: #fff !important; }
-  .has-green-background .bc-arrow-link .svg-icon {
+  .has-blue-background .bc-arrow-link .svg-icon, .has-blue-overlay .bc-arrow-link .svg-icon {
     fill: #fff !important; }
 
 .has-blue-background {
-  background-color: #00f;
+  background-color: #00f; }
+
+.has-blue-overlay .bc-media-overlay {
+  background-color: rgba(0, 0, 255, 0.24); }
+
+.has-puple-background, .has-puple-overlay {
   color: #fff; }
-  .has-blue-background a, .has-blue-background h1, .has-blue-background h2, .has-blue-background h3, .has-blue-background h4, .has-blue-background h5, .has-blue-background h6, .has-blue-background p, .has-blue-background ul, .has-blue-background li, .has-blue-background blockquote {
+  .has-puple-background a, .has-puple-background h1, .has-puple-background h2, .has-puple-background h3, .has-puple-background h4, .has-puple-background h5, .has-puple-background h6, .has-puple-background p, .has-puple-background ul, .has-puple-background li, .has-puple-background blockquote, .has-puple-overlay a, .has-puple-overlay h1, .has-puple-overlay h2, .has-puple-overlay h3, .has-puple-overlay h4, .has-puple-overlay h5, .has-puple-overlay h6, .has-puple-overlay p, .has-puple-overlay ul, .has-puple-overlay li, .has-puple-overlay blockquote {
     color: #fff !important; }
-  .has-blue-background .svg-icon {
+  .has-puple-background a::before, .has-puple-overlay a::before {
+    background-color: #fff; }
+  .has-puple-background .svg-icon, .has-puple-overlay .svg-icon {
     fill: #fff !important; }
-  .has-blue-background .bc-arrow-link .svg-icon {
+  .has-puple-background .bc-arrow-link .svg-icon, .has-puple-overlay .bc-arrow-link .svg-icon {
     fill: #fff !important; }
 
 .has-puple-background {
-  background-color: #4B0082;
+  background-color: #4B0082; }
+
+.has-puple-overlay .bc-media-overlay {
+  background-color: rgba(75, 0, 130, 0.24); }
+
+.has-violet-background, .has-violet-overlay {
   color: #fff; }
-  .has-puple-background a, .has-puple-background h1, .has-puple-background h2, .has-puple-background h3, .has-puple-background h4, .has-puple-background h5, .has-puple-background h6, .has-puple-background p, .has-puple-background ul, .has-puple-background li, .has-puple-background blockquote {
+  .has-violet-background a, .has-violet-background h1, .has-violet-background h2, .has-violet-background h3, .has-violet-background h4, .has-violet-background h5, .has-violet-background h6, .has-violet-background p, .has-violet-background ul, .has-violet-background li, .has-violet-background blockquote, .has-violet-overlay a, .has-violet-overlay h1, .has-violet-overlay h2, .has-violet-overlay h3, .has-violet-overlay h4, .has-violet-overlay h5, .has-violet-overlay h6, .has-violet-overlay p, .has-violet-overlay ul, .has-violet-overlay li, .has-violet-overlay blockquote {
     color: #fff !important; }
-  .has-puple-background .svg-icon {
+  .has-violet-background a::before, .has-violet-overlay a::before {
+    background-color: #fff; }
+  .has-violet-background .svg-icon, .has-violet-overlay .svg-icon {
     fill: #fff !important; }
-  .has-puple-background .bc-arrow-link .svg-icon {
+  .has-violet-background .bc-arrow-link .svg-icon, .has-violet-overlay .bc-arrow-link .svg-icon {
     fill: #fff !important; }
 
 .has-violet-background {
-  background-color: #9400D3;
+  background-color: #9400D3; }
+
+.has-violet-overlay .bc-media-overlay {
+  background-color: rgba(148, 0, 211, 0.24); }
+
+.has-brand-primary-background, .has-brand-primary-overlay {
   color: #fff; }
-  .has-violet-background a, .has-violet-background h1, .has-violet-background h2, .has-violet-background h3, .has-violet-background h4, .has-violet-background h5, .has-violet-background h6, .has-violet-background p, .has-violet-background ul, .has-violet-background li, .has-violet-background blockquote {
+  .has-brand-primary-background a, .has-brand-primary-background h1, .has-brand-primary-background h2, .has-brand-primary-background h3, .has-brand-primary-background h4, .has-brand-primary-background h5, .has-brand-primary-background h6, .has-brand-primary-background p, .has-brand-primary-background ul, .has-brand-primary-background li, .has-brand-primary-background blockquote, .has-brand-primary-overlay a, .has-brand-primary-overlay h1, .has-brand-primary-overlay h2, .has-brand-primary-overlay h3, .has-brand-primary-overlay h4, .has-brand-primary-overlay h5, .has-brand-primary-overlay h6, .has-brand-primary-overlay p, .has-brand-primary-overlay ul, .has-brand-primary-overlay li, .has-brand-primary-overlay blockquote {
     color: #fff !important; }
-  .has-violet-background .svg-icon {
+  .has-brand-primary-background a::before, .has-brand-primary-overlay a::before {
+    background-color: #fff; }
+  .has-brand-primary-background .svg-icon, .has-brand-primary-overlay .svg-icon {
     fill: #fff !important; }
-  .has-violet-background .bc-arrow-link .svg-icon {
+  .has-brand-primary-background .bc-arrow-link .svg-icon, .has-brand-primary-overlay .bc-arrow-link .svg-icon {
     fill: #fff !important; }
 
 .has-brand-primary-background {
-  background-color: #f50000;
+  background-color: #f50000; }
+
+.has-brand-primary-overlay .bc-media-overlay {
+  background-color: rgba(245, 0, 0, 0.24); }
+
+.has-brand-secondary-background, .has-brand-secondary-overlay {
   color: #fff; }
-  .has-brand-primary-background a, .has-brand-primary-background h1, .has-brand-primary-background h2, .has-brand-primary-background h3, .has-brand-primary-background h4, .has-brand-primary-background h5, .has-brand-primary-background h6, .has-brand-primary-background p, .has-brand-primary-background ul, .has-brand-primary-background li, .has-brand-primary-background blockquote {
+  .has-brand-secondary-background a, .has-brand-secondary-background h1, .has-brand-secondary-background h2, .has-brand-secondary-background h3, .has-brand-secondary-background h4, .has-brand-secondary-background h5, .has-brand-secondary-background h6, .has-brand-secondary-background p, .has-brand-secondary-background ul, .has-brand-secondary-background li, .has-brand-secondary-background blockquote, .has-brand-secondary-overlay a, .has-brand-secondary-overlay h1, .has-brand-secondary-overlay h2, .has-brand-secondary-overlay h3, .has-brand-secondary-overlay h4, .has-brand-secondary-overlay h5, .has-brand-secondary-overlay h6, .has-brand-secondary-overlay p, .has-brand-secondary-overlay ul, .has-brand-secondary-overlay li, .has-brand-secondary-overlay blockquote {
     color: #fff !important; }
-  .has-brand-primary-background .svg-icon {
+  .has-brand-secondary-background a::before, .has-brand-secondary-overlay a::before {
+    background-color: #fff; }
+  .has-brand-secondary-background .svg-icon, .has-brand-secondary-overlay .svg-icon {
     fill: #fff !important; }
-  .has-brand-primary-background .bc-arrow-link .svg-icon {
+  .has-brand-secondary-background .bc-arrow-link .svg-icon, .has-brand-secondary-overlay .bc-arrow-link .svg-icon {
     fill: #fff !important; }
 
 .has-brand-secondary-background {
-  background-color: #F8AC18;
-  color: #000000; }
-  .has-brand-secondary-background a, .has-brand-secondary-background h1, .has-brand-secondary-background h2, .has-brand-secondary-background h3, .has-brand-secondary-background h4, .has-brand-secondary-background h5, .has-brand-secondary-background h6, .has-brand-secondary-background p, .has-brand-secondary-background ul, .has-brand-secondary-background li, .has-brand-secondary-background blockquote {
-    color: #000000 !important; }
-  .has-brand-secondary-background .svg-icon {
-    fill: #000000 !important; }
-  .has-brand-secondary-background .bc-arrow-link .svg-icon {
-    fill: #000000 !important; }
+  background-color: #F8AC18; }
+
+.has-brand-secondary-overlay .bc-media-overlay {
+  background-color: rgba(248, 172, 24, 0.24); }
 
 /* Shading */
 .has-white-background {
@@ -860,6 +922,61 @@ td {
   .bc-hero .bc-media-overlay, .bc-hero--full-screen .bc-media-overlay {
     background-color: rgba(245, 0, 0, 0.64);
     mix-blend-mode: color-burn; }
+  .bc-hero.has-red-overlay a::before, .has-red-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-red-overlay .bc-media-overlay, .has-red-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(255, 0, 0, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-orange-overlay a::before, .has-orange-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-orange-overlay .bc-media-overlay, .has-orange-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(255, 102, 0, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-yellow-overlay a::before, .has-yellow-overlay.bc-hero--full-screen a::before {
+    background-color: #000000; }
+  .bc-hero.has-yellow-overlay .bc-media-overlay, .has-yellow-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(255, 255, 0, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-green-overlay a::before, .has-green-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-green-overlay .bc-media-overlay, .has-green-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(0, 255, 0, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-blue-overlay a::before, .has-blue-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-blue-overlay .bc-media-overlay, .has-blue-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(0, 0, 255, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-puple-overlay a::before, .has-puple-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-puple-overlay .bc-media-overlay, .has-puple-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(75, 0, 130, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-violet-overlay a::before, .has-violet-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-violet-overlay .bc-media-overlay, .has-violet-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(148, 0, 211, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-brand-primary-overlay a::before, .has-brand-primary-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-brand-primary-overlay .bc-media-overlay, .has-brand-primary-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(245, 0, 0, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-brand-secondary-overlay a::before, .has-brand-secondary-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-brand-secondary-overlay .bc-media-overlay, .has-brand-secondary-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(248, 172, 24, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-brand-primary-overlay a::before, .has-brand-primary-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-brand-primary-overlay .bc-media-overlay, .has-brand-primary-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(245, 0, 0, 0.64);
+    mix-blend-mode: multiply; }
+  .bc-hero.has-brand-secondary-overlay a::before, .has-brand-secondary-overlay.bc-hero--full-screen a::before {
+    background-color: #fff; }
+  .bc-hero.has-brand-secondary-overlay .bc-media-overlay, .has-brand-secondary-overlay.bc-hero--full-screen .bc-media-overlay {
+    background-color: rgba(248, 172, 24, 0.64);
+    mix-blend-mode: multiply; }
   .bc-hero .bc-hero__footer, .bc-hero--full-screen .bc-hero__footer {
     justify-content: center; }
     .bc-hero .bc-hero__footer__scroll::before, .bc-hero--full-screen .bc-hero__footer__scroll::before {
@@ -872,13 +989,8 @@ td {
   .bc-hero:not(.bc-hero--full-screen) .bc-hero__heading, .bc-hero--full-screen:not(.bc-hero--full-screen) .bc-hero__heading {
     font-size: var(--med-text);
     margin-bottom: 0; }
-  .bc-hero.ah-about-leader h1.bc-hero__heading, .ah-about-leader.bc-hero--full-screen h1.bc-hero__heading {
+  .bc-hero:not(.bc-hero--full-screen) h1.bc-hero__heading, .bc-hero--full-screen:not(.bc-hero--full-screen) h1.bc-hero__heading {
     margin-bottom: calc(var(--vertical-unit) / 2); }
-  .bc-hero.ah-about-leader a:before, .ah-about-leader.bc-hero--full-screen a:before {
-    background-color: var(--brand-primary); }
-  .bc-hero.ah-about-leader .bc-media-overlay, .ah-about-leader.bc-hero--full-screen .bc-media-overlay {
-    background-color: rgba(248, 172, 24, 0.64);
-    mix-blend-mode: multiply; }
   @media screen and (min-width: 768px) {
     .bc-hero.bc-pulled-right .bc-hero__body__content, .bc-pulled-right.bc-hero--full-screen .bc-hero__body__content {
       grid-column-start: 2; } }

@@ -152,6 +152,26 @@ td
 	.bc-media-overlay
 		background-color: rgba($brand-primary, 0.64)
 		mix-blend-mode: color-burn
+	@each $name, $colour-pair in $colours	
+		$colour-invert: nth($colour-pair, 2)
+		$colour: nth($colour-pair, 1)
+		&.has-#{$name}-overlay
+			a 
+				&::before
+					background-color: $colour-invert 
+			.bc-media-overlay
+				background-color: rgba($colour, 0.64) 
+				mix-blend-mode: multiply
+	@each $name, $colour-pair in $brand	
+		$colour-invert: nth($colour-pair, 2)
+		$colour: nth($colour-pair, 1)
+		&.has-#{$name}-overlay
+			a 
+				&::before
+					background-color: $colour-invert 
+			.bc-media-overlay
+				background-color: rgba($colour, 0.64) 
+				mix-blend-mode: multiply
 	& &__footer
 		justify-content: center
 		&__scroll
@@ -165,40 +185,22 @@ td
 		.bc-hero__heading
 			font-size: var(--med-text)
 			margin-bottom: 0
-	&.ah-about-leader
+	&:not(.bc-hero--full-screen)
 		//margin-top: 0
 		h1
 			&.bc-hero__heading
 				margin-bottom: calc(var(--vertical-unit) / 2)
-		a 
-			&:before
-				background-color: var(--brand-primary)
-		.bc-media-overlay
-			background-color: rgba($brand-secondary, 0.64)
-			mix-blend-mode: multiply
-	//@media screen and (min-width: $tablet)
-	//	& &__body
-	//		&.bc-grid--x4
-	//			grid-template-columns: auto
-	//@media screen and (min-width: $tablet-large)
-	//	& &__body
-	//		&.bc-grid--x4
-	//			grid-template-columns: repeat(2, 1fr)
-	//	&.bc-pulled-right
-	//		& &__body__content
-	//			grid-column-start: 2 
+		//.bc-media-overlay
+		//	background-color: rgba($brand-secondary, 0.64)
+		//	mix-blend-mode: multiply
+	
 	@media screen and (min-width: $tablet)
 		&.bc-pulled-right
 				.bc-hero__body__content
 					grid-column-start: 2
-					
 	@media screen and (min-width: $laptop)
 		& &__body__content
 			grid-column-start: 2
-	//@media screen and (min-width: $laptop-large)
-	//	& &__body__content
-	//		grid-column-start: 2 
-	//		grid-column-end: 4
 /* Card components */
 @import 'components/cards'; 
 .bc-card 

@@ -3,10 +3,10 @@
 $brand-primary: darken($red, 2%)
 $brand-primary-invert: $white
 $brand-secondary: #F8AC18
-$brand-secondary-invert: $black
+$brand-secondary-invert: $white
 
-$colours: ('red': (#{$red}, #{$red-invert}), 'orange': (#{$orange}, #{$orange-invert}), 'yellow': (#{$yellow}, #{$yellow-invert}), 'green': (#{$green}, #{$green-invert}), 'blue': (#{$blue}, #{$blue-invert}), 'puple': (#{$purple}, #{$purple-invert}), 'violet': (#{$violet}, #{$violet-invert})) 
-$brand: ('brand-primary': (#{$brand-primary}, #{$brand-primary-invert}), 'brand-secondary': (#{$brand-secondary}, #{$brand-secondary-invert})) 
+$colours: ('red': ($red, $red-invert), 'orange': ($orange, $orange-invert), 'yellow': ($yellow, $yellow-invert), 'green': ($green, $green-invert), 'blue': ($blue, $blue-invert), 'puple': ($purple, $purple-invert), 'violet': ($violet, $violet-invert)) 
+$brand: ('brand-primary': ($brand-primary, $brand-primary-invert), 'brand-secondary': ($brand-secondary, $brand-secondary-invert)) 
 
 $colours: map-merge($colours, $brand)
 

@@ -62,21 +62,26 @@
 	overflow: hidden
 
 /* Colours */
-/* Coloring */
-@each $name, $colour in $colours	
-	$colour-invert: nth($colour, 2) 
-	$colour: nth($colour, 1)
-	.has-#{$name}-background 
-		background-color: $colour
+@each $name, $colour-pair in $colours	
+	$colour-invert: nth($colour-pair, 2)
+	$colour: nth($colour-pair, 1)
+	.has-#{$name}-background, .has-#{$name}-overlay
 		color: $colour-invert 	
 		a, h1, h2, h3, h4, h5, h6, p, ul, li, blockquote
 			color: $colour-invert !important 	
+		a 
+			&::before
+				background-color: $colour-invert 
 		.svg-icon
 			fill: $colour-invert !important 
 		.bc-arrow-link
 			.svg-icon
 				fill: $colour-invert !important
-	
+	.has-#{$name}-background
+		background-color: $colour
+	.has-#{$name}-overlay
+		.bc-media-overlay
+			background-color: rgba($colour, 0.24) 
 /* Shading */
 @each $name, $shade in $shades	
 	$shade-invert: nth($shade, 2) 
