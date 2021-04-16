@@ -69,23 +69,23 @@
 		var i = 0;	
 	}
 	function bcLerpScroll($el, pos, target, speed = 0.1) {
+		pos = Math.floor(pos);
+		target = Math.floor(target);
 		if (debug) {
 			console.log(`Lerp ${i}`); 
 			console.log(`---------`);
-			console.log(`$el: ${$el.classList} pos: ${pos} target: ${target} speed: ${speed}`);
+			console.log(`$el: ${$el.classList} pos: ${Math.floor(pos)} target: ${Math.floor(target)} speed: ${speed}`);
 		}
 		let scrollOpts = {};
-		//Scroll up
-		if (Math.floor(target) > Math.floor(pos)) {
+		//Scroll down
+		if (Math.floor(pos) < Math.floor(target)) {
 			if (debug) {
 				console.log(`Scroll down`);
-				console.log(`Pos: ${pos} Target: ${target}`);
-				console.log(`Rounded Pos: ${Math.floor(pos)} Rounded Target: ${Math.floor(target)}`);
-				console.log(`Pos - Target: ${(pos - target)}`);
+				console.log(`Target - Pos * speed: ${Math.ceil((target - pos) * speed)}`);
 			}
-			pos += (target - pos) * speed; 
+			pos += Math.ceil((target - pos) * speed); 
 			if (debug) { 
-				console.log(`${pos} ${target}`);
+				console.log(`New postion: ${pos} ${target}`);
 			}
 			scrollOpts = {
 				top: pos,
@@ -94,7 +94,6 @@
 			};
 			$el.scroll(scrollOpts);
 			if (debug) {
-				console.log(`${$el.scrollY}`); 
 				i++;
 			}
 			requestAnimationFrame(() => {
@@ -107,7 +106,7 @@
 				console.log(`${pos} ${target}`);
 				console.log(`${(pos - target)}`);
 			}
-			pos -= (pos - target) * speed; 
+			pos -= Math.ceil((pos - target) * speed);  
 			if (debug) {
 				console.log(`${pos} ${target}`);	
 			}

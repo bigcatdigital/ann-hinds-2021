@@ -590,10 +590,7 @@ td {
   .bc-grid--auto {
     grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr)); }
   @media screen and (min-width: 768px) {
-    .bc-grid--x2 {
-      grid-template-columns: repeat(2, 1fr); } }
-  @media screen and (min-width: 768px) {
-    .bc-grid--x4 {
+    .bc-grid--x2, .bc-grid--x4 {
       grid-template-columns: repeat(2, 1fr); } }
   @media screen and (min-width: 1240px) {
     .bc-grid--x4 {
@@ -814,13 +811,14 @@ td {
     .bc-hero .bc-hero__body h1:last-child, .bc-hero--full-screen .bc-hero__body h1:last-child, .bc-hero .bc-hero__body p:last-child, .bc-hero--full-screen .bc-hero__body p:last-child {
       margin-bottom: 0; }
     .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
+      grid-column-end: span 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
       flex-wrap: nowrap;
       align-items: flex-start;
       z-index: 10; }
-      @media screen and (min-width: 1240px) {
+      @media screen and (min-width: 1440px) {
         .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
           grid-column-start: 2;
           grid-column-end: span 2; } }
@@ -882,15 +880,11 @@ td {
     background-color: rgba(248, 172, 24, 0.64);
     mix-blend-mode: multiply; }
   @media screen and (min-width: 768px) {
-    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
-      grid-template-columns: auto; } }
-  @media screen and (min-width: 1024px) {
-    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
-      grid-template-columns: repeat(2, 1fr); } }
+    .bc-hero.bc-pulled-right .bc-hero__body__content, .bc-pulled-right.bc-hero--full-screen .bc-hero__body__content {
+      grid-column-start: 2; } }
   @media screen and (min-width: 1240px) {
     .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
-      grid-column-start: 1;
-      grid-column-end: 2; } }
+      grid-column-start: 2; } }
 
 /* Card components */
 /* Big Cat Cards */
@@ -1149,7 +1143,7 @@ td {
 /* Transcript for object embeds */
 .bc-show-hide {
   margin-top: calc(var(--vertical-unit) / 2 * -1);
-  margin-bottom: var(--vertical-unit); }
+  margin-bottom: calc(var(--vertical-unit) / 2); }
   .bc-show-hide .bc-show-hide__toggle {
     position: relative;
     display: flex;
@@ -1157,7 +1151,8 @@ td {
     justify-content: flex-start;
     flex-wrap: nowrap;
     align-items: center;
-    padding-bottom: var(--vertical-unit);
+    padding-top: calc(var(--vertical-unit) / 2);
+    padding-bottom: calc(var(--vertical-unit) / 2);
     font-family: var(--heading-font);
     font-size: var(--text-01);
     font-weight: var(--bold-font-weight);
@@ -1170,6 +1165,8 @@ td {
       opacity: 1; }
     .bc-show-hide .bc-show-hide__toggle.bc-is-active .bc-show-hide-icon.bc-show-hide-icon__show {
       opacity: 0; }
+    .bc-show-hide .bc-show-hide__toggle.bc-is-active + .bc-show-hide__body {
+      margin-bottom: var(--vertical-unit); }
   .bc-show-hide .bc-show-hide-icon {
     position: absolute;
     right: 0;

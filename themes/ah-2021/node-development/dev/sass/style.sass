@@ -176,18 +176,29 @@ td
 		.bc-media-overlay
 			background-color: rgba($brand-secondary, 0.64)
 			mix-blend-mode: multiply
+	//@media screen and (min-width: $tablet)
+	//	& &__body
+	//		&.bc-grid--x4
+	//			grid-template-columns: auto
+	//@media screen and (min-width: $tablet-large)
+	//	& &__body
+	//		&.bc-grid--x4
+	//			grid-template-columns: repeat(2, 1fr)
+	//	&.bc-pulled-right
+	//		& &__body__content
+	//			grid-column-start: 2 
 	@media screen and (min-width: $tablet)
-		& &__body
-			&.bc-grid--x4
-				grid-template-columns: auto
-	@media screen and (min-width: $tablet-large)
-		& &__body
-			&.bc-grid--x4
-				grid-template-columns: repeat(2, 1fr)
+		&.bc-pulled-right
+				.bc-hero__body__content
+					grid-column-start: 2
+					
 	@media screen and (min-width: $laptop)
-			& &__body__content
-				grid-column-start: 1 
-				grid-column-end: 2
+		& &__body__content
+			grid-column-start: 2
+	//@media screen and (min-width: $laptop-large)
+	//	& &__body__content
+	//		grid-column-start: 2 
+	//		grid-column-end: 4
 /* Card components */
 @import 'components/cards'; 
 .bc-card 

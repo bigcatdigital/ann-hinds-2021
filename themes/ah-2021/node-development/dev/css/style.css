@@ -590,10 +590,7 @@ td {
   .bc-grid--auto {
     grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr)); }
   @media screen and (min-width: 768px) {
-    .bc-grid--x2 {
-      grid-template-columns: repeat(2, 1fr); } }
-  @media screen and (min-width: 768px) {
-    .bc-grid--x4 {
+    .bc-grid--x2, .bc-grid--x4 {
       grid-template-columns: repeat(2, 1fr); } }
   @media screen and (min-width: 1240px) {
     .bc-grid--x4 {
@@ -814,13 +811,14 @@ td {
     .bc-hero .bc-hero__body h1:last-child, .bc-hero--full-screen .bc-hero__body h1:last-child, .bc-hero .bc-hero__body p:last-child, .bc-hero--full-screen .bc-hero__body p:last-child {
       margin-bottom: 0; }
     .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
+      grid-column-end: span 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
       flex-wrap: nowrap;
       align-items: flex-start;
       z-index: 10; }
-      @media screen and (min-width: 1240px) {
+      @media screen and (min-width: 1440px) {
         .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
           grid-column-start: 2;
           grid-column-end: span 2; } }
@@ -882,15 +880,11 @@ td {
     background-color: rgba(248, 172, 24, 0.64);
     mix-blend-mode: multiply; }
   @media screen and (min-width: 768px) {
-    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
-      grid-template-columns: auto; } }
-  @media screen and (min-width: 1024px) {
-    .bc-hero .bc-hero__body.bc-grid--x4, .bc-hero--full-screen .bc-hero__body.bc-grid--x4 {
-      grid-template-columns: repeat(2, 1fr); } }
+    .bc-hero.bc-pulled-right .bc-hero__body__content, .bc-pulled-right.bc-hero--full-screen .bc-hero__body__content {
+      grid-column-start: 2; } }
   @media screen and (min-width: 1240px) {
     .bc-hero .bc-hero__body__content, .bc-hero--full-screen .bc-hero__body__content {
-      grid-column-start: 1;
-      grid-column-end: 2; } }
+      grid-column-start: 2; } }
 
 /* Card components */
 /* Big Cat Cards */

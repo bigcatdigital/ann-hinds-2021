@@ -47,9 +47,10 @@
 			&:last-child 
 				margin-bottom: 0
 		&__content 
+			grid-column-end: span 2
 			@include makeFlexbox($direction: column, $justify: center)
 			z-index: 10
-			@media screen and (min-width: $laptop)
+			@media screen and (min-width: $desktop)
 				grid-column-start: 2 
 				grid-column-end: span 2  
 	& &__header, & &__footer
