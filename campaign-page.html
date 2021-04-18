@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WP template : Components</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700&family=Raleway&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="./assets/css/vendor/flickity.min.css" />
+	<link rel="stylesheet" href="./assets/css/style.css" />
+</head>  
+<body>
+	<nav class="bc-is-hidden" aria-label="Skip to main content link" >
+		<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
+	</nav>
+	<!-- Site header  -->
+	<header class="bc-container bc-site-header has-brand-primary-background">
+		<a title="Site hompepage bc-site-header__home-link" href="/">
+			<svg class="svg-icon ">
+				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#abstract"></use> 
+			</svg>
+		</a>
+		<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
+		<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
+			<svg class="svg-icon bc-site-header__menu-link__menu ">
+				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
+			</svg>
+			<svg class="svg-icon bc-site-header__menu-link__close ">
+				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+			</svg>
+		</a>
+		<ul id="site-main-navigation" role="navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
+			<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single page</a></li>
+			<li class="bc-site-header__main-navigation__item"><a href="single-components.html">Content components</a></li>
+			<li class="bc-site-header__main-navigation__item"><a href="campaign-page.html">Campaign</a></li>
+		</ul>	
+		<h1 class="bc-site-header__title">A campaign</h1>
+	</header>
+	<!-- // Site header -->
+	<nav class="bc-breadcrummbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
+		<ul class="bc-breadcrummbs-nav__list">
+			<li><a href="/">Home</a></li>
+			<svg class="svg-icon bc-site-header__menu-link__close ">
+				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat"></use>
+			</svg>
+			<li>Campaign</li>
+		</ul>
+	</nav>
+	<!-- Two column layout --> 
+	<section class="bc-container" id="two-column-layout" aria-label="Two column layout">
+		<div class="bc-text-component bc-section-intro">
+			<h1 class="">Campaign heading</h1>
+			<p class="bc-intro-paragraph">Intro here. Set the tone for the campaign</p>	
+		</div><!-- // .bc-text-component -->
+		
+		<article class="bc-grid--x2 bc-two-column-layout" aria-label="Two column layout #1">  
+			<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
+				<h2>Campaign thought #1</h2>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				<a class="bc-arrow-link" href="javascript:void()">
+					Link to follow
+					<svg class="svg-icon">
+						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+					</svg>
+				</a>
+			</div><!-- // .bc-two-column-layout__text-column -->
+			<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
+				<picture class="bc-two-column-layout__media-column__media is-3x2">
+					<img src="assets/media/irish-family--bw.jpg" alt="Placeholder image" />
+				</picture>
+			</div><!-- // .bc-two-column-layout__media-column -->
+		</article><!-- // .bc-grid.bc-two-column-layout -->
+		<article class="bc-grid--x2 bc-two-column-layout" aria-label="Two column layout #2">  
+			<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
+				<h2>Campaign thought #2</h2>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				<a class="bc-arrow-link" href="javascript:void()">
+					Link to follow
+					<svg class="svg-icon">
+						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+					</svg>
+				</a>
+			</div><!-- // .bc-two-column-layout__text-column -->
+			<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
+				<picture class="bc-two-column-layout__media-column__media is-3x2">
+					<img src="assets/media/irish-family--bw.jpg" alt="Placeholder image" />
+				</picture>
+			</div><!-- // .bc-two-column-layout__media-column -->
+		</article><!-- // .bc-grid.bc-two-column-layout -->
+		<article class="bc-grid--x2 bc-two-column-layout" aria-label="Two column layout #1">  
+			<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
+				<h2>Campaign thought #3</h2>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				<a class="bc-arrow-link" href="javascript:void()">
+					Link to follow
+					<svg class="svg-icon">
+						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+					</svg>
+				</a>
+			</div><!-- // .bc-two-column-layout__text-column -->
+			<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
+				<picture class="bc-two-column-layout__media-column__media is-3x2">
+					<img src="assets/media/irish-family--bw.jpg" alt="Placeholder image" />
+				</picture>
+			</div><!-- // .bc-two-column-layout__media-column -->
+		</article><!-- // .bc-grid.bc-two-column-layout -->
+		<article class="bc-grid--x2 bc-two-column-layout" aria-label="Two column layout #2">  
+			<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
+				<h2>Campaign thought #4</h2>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				<a class="bc-arrow-link" href="javascript:void()">
+					Link to follow
+					<svg class="svg-icon">
+						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+					</svg>
+				</a>
+			</div><!-- // .bc-two-column-layout__text-column -->
+			<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
+				<picture class="bc-two-column-layout__media-column__media is-3x2">
+					<img src="assets/media/irish-family--bw.jpg" alt="Placeholder image" />
+				</picture>
+			</div><!-- // .bc-two-column-layout__media-column -->
+		</article><!-- // .bc-grid.bc-two-column-layout -->
+	</section><!-- //Two column layout --> 
+	<!-- Footer -->
+	<footer class="bc-container">
+		<div class="bc-grid">
+			<div>
+				<h2>Contact</h2>
+				<p>
+					Address line #1<br />
+					Address line #2<br />
+					Address line #3<br />
+					<a href="tel:01234567">01234567</a><br />
+				</p>
+				<h3>Follow us</h3>
+				<ul class="bc-icon-links">
+					<li>
+						<a target="_blank" href="https://instagram.com">
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#instagram"></use>
+							</svg>	
+						</a>
+					</li>		
+					<li>
+						<a target="_blank" href="https://twitter.com">
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#twitter"></use>
+							</svg>	
+						</a>
+					</li>	
+					<li>
+						<a target="_blank" href="https://facebook.com">
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
+							</svg>	
+						</a>
+					</li>		
+				</ul>
+			</div>
+			<div>
+				<h2>Footer heading 2</h2>
+				<ul class="bc-plain-list">
+					<li><a href="javascript:void(0)">Footer link</a></li>
+					<li><a href="javascript:void(0)">Footer link</a></li>
+					<li><a href="javascript:void(0)">Footer link</a></li>
+					<li><a href="javascript:void(0)">Footer link</a></li>
+				</ul>			
+			</div>
+			<div class="bc-grid-span-2cols">
+				<h2>Footer heading #3</h2>
+				<div class="bc-object-embed">
+					<iframe title="Location google map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152515.9863410329!2d-6.3857876133026865!3d53.3242380660387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1sen!2sie!4v1613941604616!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+			</div>
+			
+		</div>
+	</footer>
+	<script src="assets/scripts/app-concat.js"></script>  
+</body>
+</html> 
