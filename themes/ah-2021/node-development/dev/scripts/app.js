@@ -396,7 +396,7 @@
 			if (debug) {
 				console.log(`Services images array length: ${serviceImages.length}`); 
 			}
-			if (serviceImages <= 0) {
+			if (serviceImages.legth === 0) {
 				return;
 			}
 			
